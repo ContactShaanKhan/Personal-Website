@@ -2,10 +2,13 @@
 // Should do all importing from here to easily handle dependencies
 
 // Imports
-import home from './Screens/home'
-
+import Home from './Screens/home'
+import AppBar from './Bars/appbar'
+import AboutMe from './Screens/aboutMe'
 
 // Exports
 export {
-    home,
+    Home,
+    AppBar,
+    AboutMe,
 }

@@ -10,6 +10,8 @@ import { createTheme } from '@mui/material/styles';
 const Colors = {
     plain: "#abb2bf",
     background: "#282c34",
+    header: "#727e96",
+    backgroundDark: "#151b24",
     caret: "#528bff",
     pink: "#e06c75", 
     cyan: "#56b6c2",
@@ -24,11 +26,28 @@ const Colors = {
 // Colors MUI style
 const Theme = createTheme({
     palette: {
+        primary: {
+            main: Colors.plain
+        },
+        text: {
+            main: Colors.plain,
+            disabled: Colors.plain
+        },
+        secondary: {
+            main: Colors.blue,
+            contrastText: Colors.plain,
+        },
         plain: {
             main: Colors.main
         },
         background: {
             main: Colors.background
+        },
+        header: {
+            main: Colors.header
+        },
+        backgroundDark: {
+            main: Colors.backgroundDark
         },
         caret: {
             main: Colors.caret

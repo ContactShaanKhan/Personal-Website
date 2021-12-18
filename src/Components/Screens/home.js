@@ -1,8 +1,7 @@
 // Home Screen
 
-
-function home() {
+function Home() {
     return <div>Hello world!</div>;
 }
 
-export default home;
+export default Home;
