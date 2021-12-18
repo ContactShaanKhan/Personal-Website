@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { React } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ThemeProvider} from '@mui/material/styles';
+import { GlobalStoreContextProvider } from './Store';
+import { Theme } from './Common/colors';
+import {
+  home,
+} from './Components/index.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+          <GlobalStoreContextProvider>              
+              <ThemeProvider theme={Theme}>
+                <Switch>
+                    <Route path="/" exact component={home} />
+                </Switch>
+              </ThemeProvider>
+          </GlobalStoreContextProvider>
+    </BrowserRouter>
+  )
 }
 
 export default App;
