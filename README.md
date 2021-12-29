@@ -2,7 +2,7 @@
 
 Author: Shaan Khan
 
-The layout of the website takes inspiration from my google-site that I created:
+The layout of the website takes inspiration from the google-site that I created:
 https://sites.google.com/view/shaan-khan/home
 
 Color Pallete: One-monokai theme:
