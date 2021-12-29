@@ -1,6 +1,7 @@
 ------------ Short Term ------------
 TODO: Create a different view for mobile/table devices 
 TODO: Create the Title Banner
+TODO: Replace LOGOs for index.html
 
 ------------ Medium Term ------------ 
 TODO: Modify the way Tabs work, so that maybe scroll down one page instead of just having a whole
