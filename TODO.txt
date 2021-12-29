@@ -1,0 +1,11 @@
+------------ Short Term ------------
+TODO: Create a different view for mobile/table devices 
+TODO: Create the Title Banner
+
+------------ Medium Term ------------ 
+TODO: Modify the way Tabs work, so that maybe scroll down one page instead of just having a whole
+        different tab.
+TODO: Embed Resume
+
+------------ Long Term ------------
+TODO: Have a backend for retrieving information about yourself
