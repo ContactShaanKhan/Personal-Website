@@ -1,14 +1,15 @@
 import { useContext, useState } from 'react'
-import { AppBar, Box, Toolbar, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Toolbar, Tab, Tabs, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 import { GlobalStoreContext } from '../../Store'
 import { TabType } from '../../Common/Types';
-import { Colors } from '../../Common/Colors'
+import { Colors } from '../../Common/Colors';
 
 const StyledTabs = styled((props) => (
     <Tabs
         {...props}
+        orientation="vertical"
         TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
     />
 ))({
@@ -55,26 +56,33 @@ function Appbar() {
         setValue(newValue);
 
         // Set Tab Globally - if there is a change
-        if (newValue !== store.currTab)
+        if (newValue !== store.currTab) {
             store.setTab(newValue);
+        }
     };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" color="backgroundDark" >
-                <Toolbar>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }} >
-                        <StyledTabs
-                            value={value}
-                            onChange={handleChange}
-                            aria-label="styled tabs"
-                        >
-                            <StyledTab label={node("Home")} value={TabType.HOME} />
-                            <StyledTab label={node("About Me")} value={TabType.ABOUTME} />
-                        </StyledTabs>
-                    </Box>
-                </Toolbar>
-            </AppBar>
+        <Box
+            sx={{
+                flexGrow: 1,
+                backgroundColor: Colors.backgroundDark,
+                display: "flex",
+                height: "100%",
+                width: "100%",
+            }}
+        >
+            <Toolbar >
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }} >
+                    <StyledTabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="styled tabs"
+                    >
+                        <StyledTab label={node("Home")} value={TabType.HOME} />
+                        <StyledTab label={node("About Me")} value={TabType.ABOUTME} />
+                    </StyledTabs>
+                </Box>
+            </Toolbar>
         </Box>
     );
 }

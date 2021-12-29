@@ -25,9 +25,9 @@ function GlobalStoreContextProvider(props) {
             case GlobalStoreActionType.SET_TAB: {
                 return setStore({
                     currTab: payload,
-                });          
+                });
             }
-            
+
             default:
                 return store;
         }
@@ -41,9 +41,9 @@ function GlobalStoreContextProvider(props) {
 
     // Once the state changes, now actually change the tab
     useEffect(() => {
-        switch ( store.currTab ) {
+        switch (store.currTab) {
             default:
-            case TabType.Home:
+            case TabType.HOME:
                 history.push(RouteType.HOME);
                 break;
 
@@ -51,9 +51,12 @@ function GlobalStoreContextProvider(props) {
                 history.push(RouteType.ABOUTME);
                 break;
         }
-    }, [ store.currTab ]);
+    }, [store.currTab]);
 
-    store.setTab = function(tab) {
+    // Sets the current tab by changing the tab state variable
+    //      This does not actually change the route, instead the useEffect function
+    //      above does the actual routing once the state changes.
+    store.setTab = function (tab) {
         storeReducer({
             type: GlobalStoreActionType.SET_TAB,
             payload: tab
@@ -63,9 +66,9 @@ function GlobalStoreContextProvider(props) {
     //Return the contect provider
 
     return (
-        <GlobalStoreContext.Provider value={{
-            store
-        }}>
+        <GlobalStoreContext.Provider
+            value={{ store }}
+        >
             {props.children}
         </GlobalStoreContext.Provider>
     );
