@@ -1,22 +1,53 @@
 import { useContext, useState } from 'react'
 import { AppBar, Box, Toolbar, Tab, Tabs, Typography } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
-import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles'
 
 import { GlobalStoreContext } from '../../Store'
 import { TabType } from '../../Common/Types';
+import { Colors } from '../../Common/Colors'
 
-const node = (
-    <Typography textColor="plain" >
-        Home
-    </Typography>
+const StyledTabs = styled((props) => (
+    <Tabs
+        {...props}
+        TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    />
+))({
+    '& .MuiTabs-indicator': {
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: 'transparent',
+    },
+    '& .MuiTabs-indicatorSpan': {
+        width: '80%',
+        backgroundColor: Colors.blue,
+    },
+});
+
+const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
+    ({ theme }) => ({
+        textTransform: 'none',
+        fontWeight: theme.typography.fontWeightRegular,
+        fontSize: theme.typography.pxToRem(15),
+        marginRight: theme.spacing(1),
+        color: 'rgba(255, 255, 255, 0.7)',
+        '&.Mui-selected': {
+            color: Colors.blue,
+        },
+    }),
 );
-
 
 // App bar component
 function Appbar() {
     const { store } = useContext(GlobalStoreContext);
-    const theme = useTheme();
+
+    // Stylized Title Text
+    const node = function (title) {
+        return (
+            <Typography textColor="plain" >
+                {title}
+            </Typography>
+        );
+    };
 
     const [value, setValue] = useState(TabType.HOME);
 
@@ -24,29 +55,27 @@ function Appbar() {
         setValue(newValue);
 
         // Set Tab Globally - if there is a change
-        if(newValue !== store.currTab)
+        if (newValue !== store.currTab)
             store.setTab(newValue);
     };
-    
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="backgroundDark" >
-                <Toolbar>                    
+                <Toolbar>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }} >
-                        <Tabs
+                        <StyledTabs
                             value={value}
                             onChange={handleChange}
-                            textColor="secondary"
-                            indicatorColor="secondary"
-                            aria-label="app-tabs"
+                            aria-label="styled tabs"
                         >
-                            <Tab value={TabType.HOME} label={node} />
-                            <Tab value={TabType.ABOUTME} label="About Me" />
-                        </Tabs>
+                            <StyledTab label={node("Home")} value={TabType.HOME} />
+                            <StyledTab label={node("About Me")} value={TabType.ABOUTME} />
+                        </StyledTabs>
                     </Box>
                 </Toolbar>
             </AppBar>
-      </Box>
+        </Box>
     );
 }
 
