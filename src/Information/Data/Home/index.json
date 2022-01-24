@@ -1,5 +1,7 @@
 {
     "Title": "Home",
     "Images": {},
-    "Text": {}
+    "Text": {
+        "bio": "bio.txt"
+    }
 }
