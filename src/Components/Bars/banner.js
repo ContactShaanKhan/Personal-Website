@@ -1,6 +1,6 @@
 // Find Me Screen
 import { useContext } from 'react'
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import { TabType } from '../../Common/Types';
 import { GlobalStoreContext } from '../../Store';
 
@@ -35,24 +35,20 @@ function Banner() {
             break;
     }
     
+    // Find all the styling in bars.css
+
     return (
-        <Box  
-            sx ={{
-                width: "100%",
-                height: "25vh",
-                position: "relative",
-            }}
-        >
-            {/* Styles the banner in bars.css */}
+        <div id="page-banner" >
             <img 
-                id="page-banner"
+                id="page-banner-image"
                 src={bannerImage} 
                 alt="loading..." 
             />
             <div id="page-banner-text" className={bannerClass} >
                 {store.currTab}
             </div>
-        </Box>
+            <div id="page-banner-break" />
+        </div>
     );
 }
 
