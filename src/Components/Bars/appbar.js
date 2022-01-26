@@ -44,7 +44,7 @@ function Appbar() {
     // Stylized Title Text
     const node = function (title) {
         return (
-            <Typography textColor="plain" >
+            <Typography>
                 {title}
             </Typography>
         );
@@ -80,6 +80,7 @@ function Appbar() {
                     >
                         <StyledTab label={node("Home")} value={TabType.HOME} />
                         <StyledTab label={node("About Me")} value={TabType.ABOUTME} />
+                        <StyledTab label={node("Find Me")} value={TabType.FINDME} />
                     </StyledTabs>
                 </Box>
             </Toolbar>

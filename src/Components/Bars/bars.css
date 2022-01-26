@@ -1,0 +1,39 @@
+/* Css for the banner */
+#page-banner {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+}
+
+#page-banner-text {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: var(--swatch-background);
+    width: 18vw;
+    height:8vh;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white; */
+    justify-content:center;
+    align-items:center;
+}
+
+/* More page specific banner text css */
+
+.pbt-home {
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.pbt-about-me {
+
+}
+
+.pbt-find-me {
+
+}

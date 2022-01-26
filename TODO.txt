@@ -1,6 +1,6 @@
 ------------ Short Term ------------
 TODO: Create a different view for mobile/table devices 
-TODO: Create the Title Banner
+DONE: Create the Title Banner
 TODO: Replace LOGOs for index.html
 TODO: Add a bar that indidicates how far in the page you scrolled like in: https://www.lifewire.com/jsx-file-2621849
 
@@ -9,7 +9,8 @@ TODO: Modify the way Tabs work, so that maybe scroll down one page instead of ju
         different tab.
 TODO: Embed Resume
 TODO: Add a page dedicated to Shadow
+TODO: Have a different mobile view.
 
 ------------ Long Term ------------
-TODO: Have Personal information stored in txt documents that are retrieved
+TODO: Have Personal information stored in txt documents that are retrieved from firebase
 TODO: Have a backend for retrieving information about yourself

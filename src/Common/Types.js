@@ -2,13 +2,15 @@
 
 // Tab Type
 const TabType = {
-    HOME: 0,
-    ABOUTME: 1,
+    HOME: "Home",
+    ABOUTME: "About Me",
+    FINDME: "Find Me",
 };
 
 const RouteType = {
     HOME: "/",
     ABOUTME: "/AboutMe",
+    FINDME:"/FindMe",
 };
 
 // Export

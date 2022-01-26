@@ -7,7 +7,6 @@ export const GlobalStoreContext = createContext({});
 
 const GlobalStoreActionType = {
     SET_TAB: 0,
-
 }
 
 // Setting up the Global Store
@@ -41,6 +40,7 @@ function GlobalStoreContextProvider(props) {
 
     // Once the state changes, now actually change the tab
     useEffect(() => {
+        // Change the Page
         switch (store.currTab) {
             default:
             case TabType.HOME:
@@ -50,8 +50,12 @@ function GlobalStoreContextProvider(props) {
             case TabType.ABOUTME:
                 history.push(RouteType.ABOUTME);
                 break;
+
+            case TabType.FINDME:
+                history.push(RouteType.FINDME);
+                break;
         }
-    }, [store.currTab]);
+    }, [ store.currTab ]);
 
     // Sets the current tab by changing the tab state variable
     //      This does not actually change the route, instead the useEffect function
