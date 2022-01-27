@@ -1,0 +1,29 @@
+.logo-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-card-image {
+    width: 55%;
+    height: 55%;
+}
+
+.logo-card-button {
+    background-color: var(--swatch-blue);
+    color: white;
+    height:30px;
+    width:150px;
+    padding: 5%;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-card-button:hover {
+    color: white;
+    background-color: var(--swatch-pink);
+    cursor: pointer;
+}

@@ -7,7 +7,8 @@ import Home from './Screens/home'
 import AppBar from './Bars/appbar'
 import Banner from './Bars/banner'
 import AboutMe from './Screens/aboutMe'
-import FindMe from './Screens/findMe'
+import FindMe from './Screens/FindMe/findMe'
+import LogoCard from './Screens/FindMe/logoCard'
 
 // Exports
 export {
@@ -17,4 +18,5 @@ export {
     Banner,
     AboutMe,
     FindMe,
+    LogoCard,
 }

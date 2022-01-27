@@ -1,12 +1,11 @@
 // Find Me Screen
 import { useContext } from 'react'
-import { Box, Divider } from "@mui/material";
 import { TabType } from '../../Common/Types';
 import { GlobalStoreContext } from '../../Store';
 
-import ibmKebBanner from '../../Common/Images/ibmKebBanner.png';
-import czechBanner from '../../Common/Images/czechBanner.jpeg';
-import matrixBanner from '../../Common/Images/matrixBanner.jpeg';
+import ibmKebBanner from '../../Images/Banners/ibmKebBanner.png';
+import czechBanner from '../../Images/Banners/czechBanner.jpeg';
+import matrixBanner from '../../Images/Banners/matrixBanner.jpeg';
 
 import './bars.css'
 
@@ -27,7 +26,7 @@ function Banner() {
             break;
     
         case TabType.FINDME:
-            bannerImage = matrixBanner;
+            bannerImage = ibmKebBanner;
             bannerClass = "pbt-find-me";
             break;
 
