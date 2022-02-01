@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Personal-Website/static/css/main.3e347854.css",
-    "main.js": "/Personal-Website/static/js/main.79d35c33.js",
-    "static/media/czechBanner.jpeg": "/Personal-Website/static/media/czechBanner.107b9d4c2bf685189193.jpeg",
-    "static/media/matrixBanner.jpeg": "/Personal-Website/static/media/matrixBanner.cf9c387dd381953d7a42.jpeg",
-    "static/media/ibmKebBanner.png": "/Personal-Website/static/media/ibmKebBanner.99dbc09aee6f75d0f9c5.png",
-    "static/media/twitter.png": "/Personal-Website/static/media/twitter.5d170694b4f7290cbefb.png",
-    "static/media/so.jpeg": "/Personal-Website/static/media/so.42b615f2fa2c3e998173.jpeg",
-    "static/media/linkedin.png": "/Personal-Website/static/media/linkedin.f31a552ed9ef72680f6a.png",
-    "index.html": "/Personal-Website/index.html",
-    "main.3e347854.css.map": "/Personal-Website/static/css/main.3e347854.css.map",
-    "main.79d35c33.js.map": "/Personal-Website/static/js/main.79d35c33.js.map"
+    "main.css": "/static/css/main.3e347854.css",
+    "main.js": "/static/js/main.9d41f197.js",
+    "static/media/czechBanner.jpeg": "/static/media/czechBanner.107b9d4c2bf685189193.jpeg",
+    "static/media/matrixBanner.jpeg": "/static/media/matrixBanner.cf9c387dd381953d7a42.jpeg",
+    "static/media/ibmKebBanner.png": "/static/media/ibmKebBanner.99dbc09aee6f75d0f9c5.png",
+    "static/media/twitter.png": "/static/media/twitter.5d170694b4f7290cbefb.png",
+    "static/media/so.jpeg": "/static/media/so.42b615f2fa2c3e998173.jpeg",
+    "static/media/linkedin.png": "/static/media/linkedin.f31a552ed9ef72680f6a.png",
+    "index.html": "/index.html",
+    "main.3e347854.css.map": "/static/css/main.3e347854.css.map",
+    "main.9d41f197.js.map": "/static/js/main.9d41f197.js.map"
   },
   "entrypoints": [
     "static/css/main.3e347854.css",
-    "static/js/main.79d35c33.js"
+    "static/js/main.9d41f197.js"
   ]
 }
