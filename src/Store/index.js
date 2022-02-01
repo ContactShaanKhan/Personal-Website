@@ -18,9 +18,9 @@ function GlobalStoreContextProvider(props) {
 
     // Determine the starting Tab
     let defaultTab = TabType.HOME;
-    if(path.contains(RouteType.ABOUTME))
+    if(path.includes(RouteType.ABOUTME))
         defaultTab = TabType.ABOUTME;
-    else if(path.contains(RouteType.FINDME))
+    else if(path.includes(RouteType.FINDME))
         defaultTab = TabType.FINDME;
 
 
