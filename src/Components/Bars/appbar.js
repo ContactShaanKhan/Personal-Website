@@ -50,7 +50,7 @@ function Appbar() {
         );
     };
 
-    const [value, setValue] = useState(TabType.HOME);
+    const [value, setValue] = useState(store.currTab);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
