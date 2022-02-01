@@ -13,8 +13,19 @@ const GlobalStoreActionType = {
 function GlobalStoreContextProvider(props) {
     // Global State
 
+    // Determine the starting tab
+    const path = window.location.pathname;
+
+    // Determine the starting Tab
+    let defaultTab = TabType.HOME;
+    if(path.contains(RouteType.ABOUTME))
+        defaultTab = TabType.ABOUTME;
+    else if(path.contains(RouteType.FINDME))
+        defaultTab = TabType.FINDME;
+
+
     const [store, setStore] = useState({
-        currTab: TabType.HOME,
+        currTab: defaultTab,
     });
 
     const storeReducer = (action) => {
