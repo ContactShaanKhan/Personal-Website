@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import { Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import { RouteType } from '../../Common/Types';
 import {
     AppBar,
@@ -19,11 +19,21 @@ function Layout() {
             {/* The Main Component Being Displayed */}
             <Grid item xs={10} >
                 <Banner />
-                <Switch>
-                    <Route path={RouteType.HOME} exact component={Home} />
-                    <Route path={RouteType.ABOUTME} exact component={AboutMe} />
-                    <Route path={RouteType.FINDME} exact component={FindMe} />
-                </Switch>
+                <Box
+                    sx={{
+                        // position: "relative",
+                        // height: "100%",
+                        // width: "100%",
+                        // overflowY: "auto",
+                        // overflowX: "hidden"
+                    }}
+                >
+                    <Switch>
+                        <Route path={RouteType.HOME} exact component={Home} />
+                        <Route path={RouteType.ABOUTME} exact component={AboutMe} />
+                        <Route path={RouteType.FINDME} exact component={FindMe} />
+                    </Switch>
+                </Box>
             </Grid>
         </Grid>
     );

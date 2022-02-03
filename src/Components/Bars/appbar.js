@@ -20,7 +20,7 @@ const StyledTabs = styled((props) => (
     },
     '& .MuiTabs-indicatorSpan': {
         width: '80%',
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.lime,
     },
 });
 
@@ -69,9 +69,11 @@ function Appbar() {
                 display: "flex",
                 height: "100%",
                 width: "100%",
+                overflow: "disable",
+                position: "relative"
             }}
         >
-            <Toolbar >
+            <Toolbar>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }} >
                     <StyledTabs
                         value={value}
