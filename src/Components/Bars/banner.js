@@ -3,9 +3,9 @@ import { useContext } from 'react'
 import { TabType } from '../../Common/Types';
 import { GlobalStoreContext } from '../../Store';
 
-import ibmKebBanner from '../../Images/Banners/ibmKebBanner.png';
-import czechBanner from '../../Images/Banners/czechBanner.jpeg';
-import matrixBanner from '../../Images/Banners/matrixBanner.jpeg';
+import dataHome from '../../Data/Home.json';
+import dataFindMe from '../../Data/FindMe.json';
+import dataAboutMe from '../../Data/AboutMe.json';
 
 import './bars.css'
 
@@ -16,17 +16,17 @@ function Banner() {
     // Get the appropriate css class for the banner styling
 
     // Default: HOME
-    let bannerImage = ibmKebBanner;
+    let bannerImage = dataHome.banner;
     let bannerClass = "pbt-home";
 
     switch (store.currTab) {
         case TabType.ABOUTME:
-            bannerImage = czechBanner;
+            bannerImage = dataAboutMe.banner;
             bannerClass = "pbt-about-me";
             break;
     
         case TabType.FINDME:
-            bannerImage = ibmKebBanner;
+            bannerImage = dataFindMe.banner;
             bannerClass = "pbt-find-me";
             break;
 

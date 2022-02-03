@@ -8,7 +8,7 @@ function FindMe() {
     return (
         <Grid container spacing={3}>
             {
-                data.map((item, index) => (
+                data.body.map((item, index) => (
                     <Grid item xs={3} key={index}>
                         <LogoCard name={item.name} image={item.image} link={item.link} />
                     </Grid>

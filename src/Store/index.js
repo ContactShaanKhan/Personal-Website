@@ -23,7 +23,7 @@ function GlobalStoreContextProvider(props) {
     else if(path.includes(RouteType.FINDME))
         defaultTab = TabType.FINDME;
 
-
+    // The global store/state
     const [store, setStore] = useState({
         currTab: defaultTab,
     });
@@ -66,7 +66,7 @@ function GlobalStoreContextProvider(props) {
                 history.push(RouteType.FINDME);
                 break;
         }
-    }, [ store.currTab ]);
+    }, [ store.currTab, history ]);
 
     // Sets the current tab by changing the tab state variable
     //      This does not actually change the route, instead the useEffect function

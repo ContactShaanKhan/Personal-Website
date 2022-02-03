@@ -1,22 +1,26 @@
-[
-    {
-        "name": "Linked In",
-        "link": "https://www.linkedin.com/in/shaan-khan-823a771b8/",
-        "image": "/Data/FindMe/Images/linkedin.png"
-    },
-    {
-        "name": "GitHub",
-        "link": "https://github.com/ContactShaanKhan",
-        "image": "/Data/FindMe/Images/github.png"
-    },
-    {
-        "name": "Twitter",
-        "link": "https://twitter.com/ctshaankhan",
-        "image": "/Data/FindMe/Images/twitter.png"
-    },
-    {
-        "name": "Stack Overflow",
-        "link": "https://stackoverflow.com/users/13132133/shaan-k",
-        "image": "/Data/FindMe/Images/so.jpeg"
-    }
-]
+{
+    "banner":"/Data/Banners/ibmKebBanner.png",
+    "body": 
+        [
+            {
+                "name": "Linked In",
+                "link": "https://www.linkedin.com/in/shaan-khan-823a771b8/",
+                "image": "/Data/FindMe/Images/linkedin.png"
+            },
+            {
+                "name": "GitHub",
+                "link": "https://github.com/ContactShaanKhan",
+                "image": "/Data/FindMe/Images/github.png"
+            },
+            {
+                "name": "Twitter",
+                "link": "https://twitter.com/ctshaankhan",
+                "image": "/Data/FindMe/Images/twitter.png"
+            },
+            {
+                "name": "Stack Overflow",
+                "link": "https://stackoverflow.com/users/13132133/shaan-k",
+                "image": "/Data/FindMe/Images/so.jpeg"
+            }
+        ]
+}

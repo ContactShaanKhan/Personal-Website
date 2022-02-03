@@ -1,4 +1,5 @@
 {
+    "banner": "/Data/Banners/czechBanner.jpeg",
     "body": "/Data/AboutMe/body.txt",
-    "image": ""
+    "image": "/Data/AboutMe/AboutMePhoto.jpeg"
 }
