@@ -14,3 +14,7 @@ TODO: Have a different mobile view.
 ------------ Long Term ------------
 TODO: Have Personal information stored in txt documents that are retrieved from firebase
 TODO: Have a backend for retrieving information about yourself
+
+
+------------ BUGS ------------
+TODO: Fix the size of the toolbar (the width changes between tabs)
