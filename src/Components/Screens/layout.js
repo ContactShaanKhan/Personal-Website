@@ -7,6 +7,7 @@ import {
     Home,
     AboutMe,
     FindMe,
+    Shadow,
 } from '../index';
 
 function Layout() {
@@ -30,6 +31,7 @@ function Layout() {
                         <Route path={RouteType.HOME} exact component={Home} />
                         <Route path={RouteType.ABOUTME} exact component={AboutMe} />
                         <Route path={RouteType.FINDME} exact component={FindMe} />
+                        <Route path={RouteType.SHADOW} exact component={Shadow} />
                     </Switch>
                 </Box>
             </Grid>

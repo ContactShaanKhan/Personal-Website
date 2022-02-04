@@ -22,6 +22,8 @@ function GlobalStoreContextProvider(props) {
         defaultTab = TabType.ABOUTME;
     else if(path.includes(RouteType.FINDME))
         defaultTab = TabType.FINDME;
+    else if(path.includes(RouteType.SHADOW))
+        defaultTab = TabType.SHADOW;
 
     // The global store/state
     const [store, setStore] = useState({
@@ -64,6 +66,10 @@ function GlobalStoreContextProvider(props) {
 
             case TabType.FINDME:
                 history.push(RouteType.FINDME);
+                break;
+
+            case TabType.SHADOW:
+                history.push(RouteType.SHADOW);
                 break;
         }
     }, [ store.currTab, history ]);

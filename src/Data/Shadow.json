@@ -1,6 +1,13 @@
 {
     "banner":"/Data/Banners/ibmKebBanner.png",
     "images": [
-        
+        {
+            "img": "/Data/Shadow/shadow1.JPG",
+            "title": "Shadow Christmas 1"
+          },
+          {
+            "img": "/Data/Shadow/shadow2.JPG",
+            "title": "Shadow Christmas 2"
+          }
     ]
 }

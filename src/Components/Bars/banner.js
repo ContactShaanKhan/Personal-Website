@@ -6,6 +6,7 @@ import { GlobalStoreContext } from '../../Store';
 import dataHome from '../../Data/Home.json';
 import dataFindMe from '../../Data/FindMe.json';
 import dataAboutMe from '../../Data/AboutMe.json';
+import dataShadow from '../../Data/Shadow.json'
 
 import './bars.css'
 
@@ -15,11 +16,16 @@ function Banner() {
 
     // Get the appropriate css class for the banner styling
 
-    // Default: HOME
-    let bannerImage = dataHome.banner;
-    let bannerClass = "pbt-home";
+    let bannerImage;
+    let bannerClass;
 
     switch (store.currTab) {
+        default:
+        case TabType.HOME:
+            bannerImage = dataHome.banner;
+            bannerClass = "pbt-home";
+            break;
+
         case TabType.ABOUTME:
             bannerImage = dataAboutMe.banner;
             bannerClass = "pbt-about-me";
@@ -30,7 +36,9 @@ function Banner() {
             bannerClass = "pbt-find-me";
             break;
 
-        default:
+        case TabType.SHADOW:
+            bannerImage = dataShadow.banner;
+            bannerClass = "pbt-shadow"
             break;
     }
     

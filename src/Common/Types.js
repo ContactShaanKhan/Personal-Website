@@ -16,7 +16,8 @@ const RouteType = {
 };
 
 // Convenient Array of all the tabs
-const AllTabs = [TabType.HOME, TabType.ABOUTME, TabType.FINDME, TabType.SHADOW];
+// Note: Order of this array is the order of the tabs in the website
+const AllTabs = [TabType.HOME, TabType.ABOUTME, TabType.SHADOW, TabType.FINDME];
 
 // Export
 
