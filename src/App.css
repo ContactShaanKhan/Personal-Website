@@ -27,6 +27,8 @@ body {
     left: 0px;
     height: 100%;
     top: 0px;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 #app-root {

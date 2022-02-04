@@ -18,16 +18,14 @@ function Layout() {
             </Grid>
             {/* The Main Component Being Displayed */}
             <Grid item xs={10} >
-                <Banner />
                 <Box
                     sx={{
-                        // position: "relative",
-                        // height: "100%",
-                        // width: "100%",
-                        // overflowY: "auto",
-                        // overflowX: "hidden"
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
                     }}
                 >
+                    <Banner />
                     <Switch>
                         <Route path={RouteType.HOME} exact component={Home} />
                         <Route path={RouteType.ABOUTME} exact component={AboutMe} />

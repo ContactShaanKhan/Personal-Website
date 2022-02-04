@@ -3,7 +3,7 @@ import { Box, Toolbar, Tab, Tabs, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 import { GlobalStoreContext } from '../../Store'
-import { TabType } from '../../Common/Types';
+import { TabType, AllTabs } from '../../Common/Types';
 import { Colors } from '../../Common/Colors';
 
 const StyledTabs = styled((props) => (
@@ -69,8 +69,6 @@ function Appbar() {
                 display: "flex",
                 height: "100%",
                 width: "100%",
-                overflow: "disable",
-                position: "relative"
             }}
         >
             <Toolbar>
@@ -80,9 +78,11 @@ function Appbar() {
                         onChange={handleChange}
                         aria-label="styled tabs"
                     >
-                        <StyledTab label={node("Home")} value={TabType.HOME} />
-                        <StyledTab label={node("About Me")} value={TabType.ABOUTME} />
-                        <StyledTab label={node("Find Me")} value={TabType.FINDME} />
+                        {
+                            AllTabs.map((tab) => {
+                                return (<StyledTab label={node(tab)} value={tab} />)
+                            })
+                        }
                     </StyledTabs>
                 </Box>
             </Toolbar>
