@@ -50,6 +50,7 @@ function Banner() {
                 id="page-banner-image"
                 src={bannerImage}
                 alt="loading..."
+                loading='eager'
             />
             <div id="page-banner-text" className={bannerClass} >
                 {store.currTab}

@@ -10,4 +10,4 @@ https://sites.google.com/view/shaan-khan/home
 Color Pallete: One-monokai theme:
 https://github.com/azemoh/vscode-one-monokai/blob/master/colors.scss
 
-View Published Website: https://contactshaankhan.github.io/Personal-Website/
+View Published Website: https://shaankhan.me
