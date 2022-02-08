@@ -1,4 +1,4 @@
-import { Box, ImageList, ImageListItem } from '@mui/material';
+import { ImageList, ImageListItem } from '@mui/material';
 
 import itemData from '../../../Data/Shadow.json'
 
