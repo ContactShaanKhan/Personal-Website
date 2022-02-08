@@ -1,5 +1,4 @@
 import { Route, Switch } from 'react-router-dom';
-import { Grid, Box } from '@mui/material';
 import { RouteType } from '../../Common/Types';
 import {
     AppBar,
@@ -9,33 +8,28 @@ import {
     FindMe,
     Shadow,
 } from '../index';
+import './screens.css';
 
 function Layout() {
     return (
-        <Grid container sx={{ height: "100%", width: "100%" }} spacing={0}>
+        <div id="layout">
             {/* The Sidebar Appbar */}
-            <Grid item xs={2} >
+            <div id='sidebar'>
                 <AppBar />
-            </Grid>
+            </div>
             {/* The Main Component Being Displayed */}
-            <Grid item xs={10} >
-                <Box
-                    sx={{
-                        position: "relative",
-                        height: "100%",
-                        width: "100%",
-                    }}
-                >
-                    <Banner />
+            <div id='main-body'>
+                <Banner />
+                <div id="main-body-container">
                     <Switch>
                         <Route path={RouteType.HOME} exact component={Home} />
                         <Route path={RouteType.ABOUTME} exact component={AboutMe} />
                         <Route path={RouteType.FINDME} exact component={FindMe} />
                         <Route path={RouteType.SHADOW} exact component={Shadow} />
                     </Switch>
-                </Box>
-            </Grid>
-        </Grid>
+                </div>
+            </div>
+        </div>
     );
 }
 
