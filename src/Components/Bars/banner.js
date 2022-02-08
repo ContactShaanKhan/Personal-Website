@@ -30,7 +30,7 @@ function Banner() {
             bannerImage = dataAboutMe.banner;
             bannerClass = "pbt-about-me";
             break;
-    
+
         case TabType.FINDME:
             bannerImage = dataFindMe.banner;
             bannerClass = "pbt-find-me";
@@ -41,15 +41,15 @@ function Banner() {
             bannerClass = "pbt-shadow"
             break;
     }
-    
+
     // Find all the styling in bars.css
 
     return (
         <div id="page-banner" >
-            <img 
+            <img
                 id="page-banner-image"
-                src={bannerImage} 
-                alt="loading..." 
+                src={bannerImage}
+                alt="loading..."
             />
             <div id="page-banner-text" className={bannerClass} >
                 {store.currTab}

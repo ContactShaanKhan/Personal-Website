@@ -13,7 +13,7 @@ const Colors = {
     header: "#727e96",
     backgroundDark: "#151b24",
     caret: "#528bff",
-    pink: "#e06c75", 
+    pink: "#e06c75",
     cyan: "#56b6c2",
     lime: "#98c379",
     purple: "#c678dd",
@@ -76,8 +76,8 @@ const Theme = createTheme({
         comment: {
             main: Colors.comment
         },
-      }
-    },
+    }
+},
 );
 
 export {

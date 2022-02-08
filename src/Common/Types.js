@@ -11,8 +11,8 @@ const TabType = {
 const RouteType = {
     HOME: "/",
     ABOUTME: "/about-me",
-    FINDME:"/find-me",
-    SHADOW:"/shadow"
+    FINDME: "/find-me",
+    SHADOW: "/shadow"
 };
 
 // Convenient Array of all the tabs

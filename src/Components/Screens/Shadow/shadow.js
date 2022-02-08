@@ -2,7 +2,7 @@ import { ImageList, ImageListItem } from '@mui/material';
 
 import itemData from '../../../Data/Shadow.json'
 
-function Shadow(props) {
+function Shadow() {
     return (
         <ImageList variant="masonry" cols={3} gap={8}>
             {itemData.images.map((item) => (

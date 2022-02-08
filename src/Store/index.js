@@ -18,11 +18,11 @@ function GlobalStoreContextProvider(props) {
 
     // Determine the starting Tab
     let defaultTab = TabType.HOME;
-    if(path.includes(RouteType.ABOUTME))
+    if (path.includes(RouteType.ABOUTME))
         defaultTab = TabType.ABOUTME;
-    else if(path.includes(RouteType.FINDME))
+    else if (path.includes(RouteType.FINDME))
         defaultTab = TabType.FINDME;
-    else if(path.includes(RouteType.SHADOW))
+    else if (path.includes(RouteType.SHADOW))
         defaultTab = TabType.SHADOW;
 
     // The global store/state
@@ -72,7 +72,7 @@ function GlobalStoreContextProvider(props) {
                 history.push(RouteType.SHADOW);
                 break;
         }
-    }, [ store.currTab, history ]);
+    }, [store.currTab, history]);
 
     // Sets the current tab by changing the tab state variable
     //      This does not actually change the route, instead the useEffect function
