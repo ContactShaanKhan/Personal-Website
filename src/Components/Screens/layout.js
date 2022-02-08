@@ -1,7 +1,11 @@
 import { Route, Switch } from 'react-router-dom';
+import { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
+import { AppBar, Toolbar, IconButton, Typography, Collapse } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { RouteType } from '../../Common/Types';
 import {
-    AppBar,
+    TabBar,
     Banner,
     Home,
     AboutMe,
@@ -11,11 +15,47 @@ import {
 import './screens.css';
 
 function Layout() {
-    return (
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+
+    const [checked, setChecked] = useState(false);
+
+    const handleOpen = function (e) {
+        setChecked((prev) => !prev);
+    }
+
+
+    const mobileView = (
+        <div id="layout-mobile">
+            <div id='appbar'>
+                <AppBar position="static">
+                    <Toolbar variant="dense">
+                        <IconButton
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                            onClick={handleOpen}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" color="inherit" component="div">
+                            Shaan Khan
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+            </div>
+            <Collapse in={checked} orientation="horizontal">
+                <TabBar />
+            </Collapse>
+
+        </div>
+    );
+
+    const desktopView = (
         <div id="layout">
             {/* The Sidebar Appbar */}
             <div id='sidebar'>
-                <AppBar />
+                <TabBar />
             </div>
             {/* The Main Component Being Displayed */}
             <div id='main-body'>
@@ -31,6 +71,8 @@ function Layout() {
             </div>
         </div>
     );
+
+    return (isDesktopOrLaptop) ? desktopView : mobileView;
 }
 
 export default Layout;
