@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
-import { useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { AppBar, Toolbar, IconButton, Typography, Collapse } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { RouteType } from '../../Common/Types';
@@ -17,12 +17,12 @@ import './screens.css';
 function Layout() {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
 
+    // When checked is true the sidebar is open
     const [checked, setChecked] = useState(false);
 
     const handleOpen = function (e) {
         setChecked((prev) => !prev);
     }
-
 
     const mobileView = (
         <div id="layout-mobile">
@@ -44,17 +44,23 @@ function Layout() {
                     </Toolbar>
                 </AppBar>
             </div>
-            <div id='sidebar'>
+            <div className={(checked) ? 'sidebar-mobile-open' : 'sidebar-mobile-closed'}>
                 <Collapse in={checked} orientation="horizontal">
                     <TabBar />
                 </Collapse>
             </div>
-            <div id='main-body'>
-                <Shadow />
+            <div className={(checked) ? "closed-body-mobile" : "open-body-mobile"}>
+                <Switch>
+                    <Route path={RouteType.HOME} exact component={Home} />
+                    <Route path={RouteType.ABOUTME} exact component={AboutMe} />
+                    <Route path={RouteType.FINDME} exact component={FindMe} />
+                    <Route path={RouteType.SHADOW} exact component={Shadow} />
+                </Switch>
             </div>
-
         </div >
     );
+
+    // Code for when in desktop view
 
     const desktopView = (
         <div id="layout">
@@ -66,12 +72,12 @@ function Layout() {
             <div id='main-body'>
                 <Banner />
                 <div id="main-body-container">
-                    <Switch>
-                        <Route path={RouteType.HOME} exact component={Home} />
-                        <Route path={RouteType.ABOUTME} exact component={AboutMe} />
-                        <Route path={RouteType.FINDME} exact component={FindMe} />
-                        <Route path={RouteType.SHADOW} exact component={Shadow} />
-                    </Switch>
+                <Switch>
+                    <Route path={RouteType.HOME} exact component={Home} />
+                    <Route path={RouteType.ABOUTME} exact component={AboutMe} />
+                    <Route path={RouteType.FINDME} exact component={FindMe} />
+                    <Route path={RouteType.SHADOW} exact component={Shadow} />
+                </Switch>
                 </div>
             </div>
         </div>

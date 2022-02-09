@@ -6,7 +6,7 @@ function Shadow() {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
 
     // Reduce the number of columns if on the mobile view
-    const numCols = (isDesktopOrLaptop) ? 3 : 2;
+    const numCols = (isDesktopOrLaptop) ? 4 : 2;
 
     return (
         <ImageList variant="masonry" cols={numCols} gap={8}>
