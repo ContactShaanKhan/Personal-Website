@@ -44,11 +44,16 @@ function Layout() {
                     </Toolbar>
                 </AppBar>
             </div>
-            <Collapse in={checked} orientation="horizontal">
-                <TabBar />
-            </Collapse>
+            <div id='sidebar'>
+                <Collapse in={checked} orientation="horizontal">
+                    <TabBar />
+                </Collapse>
+            </div>
+            <div id='main-body'>
+                <Shadow />
+            </div>
 
-        </div>
+        </div >
     );
 
     const desktopView = (
