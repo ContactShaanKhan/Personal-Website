@@ -1,0 +1,13 @@
+Thank you for visiting my site!
+
+Whether you want to take a look at my resume or learn more about me, you have come to the right place and Iâm glad to have you here. 
+
+Let’s start with a brief introduction.  I am a soon-to-be Computer Science graduate at Stony Brook University.  I have a professional and personal interest in software development, particularly the programs written in C and scripts written in python.  Recently I have enjoyed learning about Operating System development particularly with UNIX like systems.   Moreover, web development is something I have been enjoying more over time and React + JavaScript have kept it interesting.  If these language names donât mean much to you, just know that Iâm a geek.
+
+When I am not dealing with 1s and 0s, I enjoy playing with my dog Shadow, working on my 2009 Crown Victoria Police Interceptor, taking photos with my Canon 5D classic, and listening to a vast variety of music including rock (both classic and modern).  If any of these things sound interesting to you, youâll find the Interests page pleasing.
+
+If you think that I would be a good fit for your team, you can find my resume for viewing or download in the Resume Tab.
+
+I always enjoy a coding project, so if you feel I could work with you on one, connect with me on linked-in or any way listed in the Find me page.
+
+Otherwise, if you are not sure on where to visit now, come take a look at a few of my photos within the Interests page.
