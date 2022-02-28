@@ -84,6 +84,13 @@ function GlobalStoreContextProvider(props) {
         });
     }
 
+
+    // Store Functions and constants related to screen size
+    store.desktopMinWidthQuery = '(min-width: 993px)';
+    store.makeMediaQuery = function (minWidth) {
+        return '(min-width: ' + minWidth + 'px)';
+    }
+
     //Return the contect provider
 
     return (

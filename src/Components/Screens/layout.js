@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { GlobalStoreContext } from '../../Store'
 import { useMediaQuery } from 'react-responsive';
 import { AppBar, Toolbar, IconButton, Typography, Collapse } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -15,7 +16,9 @@ import {
 import './screens.css';
 
 function Layout() {
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+    const { store } = useContext(GlobalStoreContext);
+
+    const isDesktopOrLaptop = useMediaQuery({ query: store.desktopMinWidthQuery });
 
     // When checked is true the sidebar is open
     const [checked, setChecked] = useState(false);
