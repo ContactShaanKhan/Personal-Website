@@ -7,6 +7,7 @@ TODO: Add a bar that indidicates how far in the page you scrolled like in: https
 ------------ Medium Term ------------ 
 TODO: Embed Resume
 DONE: Add a page dedicated to Shadow
+TODO: Convert to typescript
 
 ------------ BUGS ------------
 DONE: Fix the size of the toolbar (the width changes between tabs)
