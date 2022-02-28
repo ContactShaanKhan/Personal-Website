@@ -6,7 +6,6 @@ import { Typography, Grid, Box } from '@mui/material'
 import data from '../../../Data/AboutMe.json';
 import { GlobalStoreContext } from '../../../Store'
 import './aboutMe.css';
-import { display } from '@mui/system';
 
 function AboutMe() {
     const { store } = useContext(GlobalStoreContext);

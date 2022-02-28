@@ -3,7 +3,7 @@
 
 // Imports
 import Layout from './Screens/layout'
-import Home from './Screens/home'
+import Home from './Screens/Home/home'
 import TabBar from './Bars/tabbar'
 import Banner from './Bars/banner'
 import AboutMe from './Screens/AboutMe/aboutMe'

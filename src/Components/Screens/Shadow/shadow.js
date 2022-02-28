@@ -1,9 +1,13 @@
+import { useContext } from 'react'
 import { ImageList, ImageListItem } from '@mui/material';
 import { useMediaQuery } from 'react-responsive'
+import { GlobalStoreContext } from '../../../Store'
 import itemData from '../../../Data/Shadow.json'
 
 function Shadow() {
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+    const { store } = useContext(GlobalStoreContext);
+
+    const isDesktopOrLaptop = useMediaQuery({ query: store.makeMediaQuery(1224) });
 
     // Reduce the number of columns if on the mobile view
     const numCols = (isDesktopOrLaptop) ? 4 : 2;
