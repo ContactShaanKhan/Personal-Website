@@ -18,8 +18,3 @@
     padding: 20px;
     color  : white;
 }
-
-.react-pdf__Page__textContent {
-    border       : 1px solid darkgrey;
-    border-radius: 5px;
-}

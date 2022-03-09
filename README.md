@@ -26,6 +26,7 @@ TODO: Add more to the resume page (like link to resume in google drive)
 TODO: Embed Resume  
 **_DONE_**: Add a page dedicated to Shadow   
 TODO: Update Resume  
+TODO: Add contact me page that uses AWS lambda functions for emailing  
 
 #### ------------ Long Term ------------ 
 TODO: Convert to typescript (Create release for javascript variant)
