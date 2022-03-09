@@ -23,7 +23,7 @@ TODO: Make layout.js less verbose
 TODO: Add more to the resume page (like link to resume in google drive)  
 
 #### ------------ Medium Term ------------ 
-TODO: Embed Resume  
+**_DONE_**: Embed Resume  
 **_DONE_**: Add a page dedicated to Shadow   
 TODO: Update Resume  
 TODO: Add contact me page that uses AWS lambda functions for emailing  
