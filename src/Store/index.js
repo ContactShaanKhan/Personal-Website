@@ -16,10 +16,11 @@ function GlobalStoreContextProvider(props) {
     // Determine the starting tab
     const path = window.location.pathname;
 
-    // Determine the starting Tab
     let defaultTab = TabType.HOME;
     if (path.includes(RouteType.ABOUTME))
         defaultTab = TabType.ABOUTME;
+    else if (path.includes(RouteType.RESUME))
+        defaultTab = TabType.RESUME;
     else if (path.includes(RouteType.FINDME))
         defaultTab = TabType.FINDME;
     else if (path.includes(RouteType.SHADOW))
@@ -62,6 +63,10 @@ function GlobalStoreContextProvider(props) {
 
             case TabType.ABOUTME:
                 history.push(RouteType.ABOUTME);
+                break;
+
+            case TabType.RESUME:
+                history.push(RouteType.RESUME);
                 break;
 
             case TabType.FINDME:

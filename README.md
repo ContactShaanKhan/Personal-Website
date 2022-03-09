@@ -19,10 +19,12 @@ TODO: Create a different view for mobile/table devices
 **_DONE_**: Replace LOGOs for index.html  
 TODO: Add a bar that indidicates how far in the page you scrolled like in: https://www.lifewire.com/jsx-file-2621849  
 TODO: Home and about tab have extremely similar code, consider refactoring  
+TODO: Make layout.js less verbose   
 
 #### ------------ Medium Term ------------ 
 TODO: Embed Resume  
-**_DONE_**: Add a page dedicated to Shadow  
+**_DONE_**: Add a page dedicated to Shadow   
+TODO: Update Resume  
 
 #### ------------ Long Term ------------ 
 TODO: Convert to typescript (Create release for javascript variant)
@@ -30,3 +32,4 @@ TODO: Convert to typescript (Create release for javascript variant)
 
 #### ------------ BUGS ------------
 **_DONE_**: Fix the size of the toolbar (the width changes between tabs)  
+TODO: Highlighting on pdf is wierd  

@@ -6,6 +6,7 @@ import { GlobalStoreContext } from '../../Store';
 import dataHome from '../../Data/Home.json';
 import dataFindMe from '../../Data/FindMe.json';
 import dataAboutMe from '../../Data/AboutMe.json';
+import dataResume from '../../Data/Resume.json';
 import dataShadow from '../../Data/Shadow.json'
 
 import './bars.css'
@@ -30,6 +31,11 @@ function Banner() {
             bannerImage = dataAboutMe.banner;
             bannerClass = "pbt-about-me";
             break;
+
+        case TabType.RESUME:
+            bannerImage = dataResume.banner;
+            bannerClass = "pbt-resume";
+            break
 
         case TabType.FINDME:
             bannerImage = dataFindMe.banner;
