@@ -1,6 +1,6 @@
 Thank you for visiting my site!
 
-Whether you want to take a look at my resume or learn more about me, you have come to the right place and Iâm glad to have you here. 
+Whether you want to take a look at my resume or learn more about me, you have come to the right place and I'm glad to have you here. 
 
 Let’s start with a brief introduction.  I am a soon-to-be Computer Science graduate at Stony Brook University.  I have a professional and personal interest in software development, particularly the programs written in C and scripts written in python.  Recently I have enjoyed learning about Operating System development particularly with UNIX like systems.   Moreover, web development is something I have been enjoying more over time and React + JavaScript have kept it interesting.  If these language names don’t mean much to you, just know that I’m a geek.
 
