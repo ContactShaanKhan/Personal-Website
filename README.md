@@ -20,6 +20,7 @@ TODO: Create a different view for mobile/table devices
 TODO: Add a bar that indidicates how far in the page you scrolled like in: https://www.lifewire.com/jsx-file-2621849  
 TODO: Home and about tab have extremely similar code, consider refactoring  
 TODO: Make layout.js less verbose   
+TODO: Add more to the resume page (like link to resume in google drive)  
 
 #### ------------ Medium Term ------------ 
 TODO: Embed Resume  
