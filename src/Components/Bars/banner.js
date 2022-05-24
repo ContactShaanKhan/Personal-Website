@@ -10,6 +10,7 @@ import dataResume from '../../Data/Resume.json';
 import dataShadow from '../../Data/Shadow.json'
 
 import './bars.css'
+import { Box, Typography } from '@mui/material';
 
 function Banner() {
     // The image is retrieved from the global state
@@ -19,17 +20,20 @@ function Banner() {
 
     let bannerImage;
     let bannerClass;
+    let bannerText = store.currTab;
 
     switch (store.currTab) {
         default:
         case TabType.HOME:
             bannerImage = dataHome.banner;
             bannerClass = "pbt-home";
+            bannerText = "Hi! I'm Shaan Khan."
             break;
 
         case TabType.ABOUTME:
             bannerImage = dataAboutMe.banner;
             bannerClass = "pbt-about-me";
+            bannerText = "All about me"
             break;
 
         case TabType.RESUME:
@@ -51,18 +55,22 @@ function Banner() {
     // Find all the styling in bars.css
 
     return (
-        <div id="page-banner" >
-            <img
-                id="page-banner-image"
-                src={bannerImage}
-                alt=""
-                loading='lazy'
-            />
-            <div id="page-banner-text" className={bannerClass} >
-                {store.currTab}
+        <Typography variant='h2' >
+            <div style={{
+                width: "100%",
+                height: "25vh",
+                backgroundImage: `url(${bannerImage})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+            }}>
+
+                <div id="page-banner-text" className={bannerClass} >
+                    {bannerText}
+                </div>
+
             </div>
-            <div id="page-banner-break" />
-        </div>
+        </Typography>
     );
 }
 

@@ -75,15 +75,18 @@ function Layout() {
             </div>
             {/* The Main Component Being Displayed */}
             <div id='main-body'>
-                <Banner />
+                <div id="banner-container">
+                    <Banner />
+                    <div id="page-banner-break" />
+                </div>
                 <div id="main-body-container">
-                <Switch>
-                    <Route path={RouteType.HOME} exact component={Home} />
-                    <Route path={RouteType.ABOUTME} exact component={AboutMe} />
-                    <Route path={RouteType.RESUME} exact component={Resume} />
-                    <Route path={RouteType.FINDME} exact component={FindMe} />
-                    <Route path={RouteType.SHADOW} exact component={Shadow} />
-                </Switch>
+                    <Switch>
+                        <Route path={RouteType.HOME} exact component={Home} />
+                        <Route path={RouteType.ABOUTME} exact component={AboutMe} />
+                        <Route path={RouteType.RESUME} exact component={Resume} />
+                        <Route path={RouteType.FINDME} exact component={FindMe} />
+                        <Route path={RouteType.SHADOW} exact component={Shadow} />
+                    </Switch>
                 </div>
             </div>
         </div>
