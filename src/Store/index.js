@@ -96,6 +96,55 @@ function GlobalStoreContextProvider(props) {
         return '(min-width: ' + minWidth + 'px)';
     }
 
+
+    // API Calls and server related information
+
+    // Server constants ------------------------------------
+    const maxCharacters = 500;
+    const endPoint = "https://88wgvu7tt2.execute-api.us-east-1.amazonaws.com/default/ContactMe";
+    const server_NotSoSecret_secret = "IT-IS-NO-SECRET-THAT-SHADOW-IS-THE-CUTEST-DOG-ALIVE-!9976802140!";
+
+    store.submitContactForm = async function (name, reply_to, body) {
+        console.log("Sending contact form...");
+
+        name = name.trim();
+        reply_to = reply_to.trim();
+        body = body.trim();
+
+        // TODO: Modal
+        if (!name || !reply_to || !body)
+            return false;
+
+        // TODO: Modal
+        if (!reply_to.includes('@'))
+            return false;
+
+        const myHeaders = {
+            shadowbestdog: server_NotSoSecret_secret
+        };
+
+        const data = {
+            sender: name,
+            senderEmail: reply_to,
+            text: body
+        };
+
+        const request = new Request(endPoint, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: new Headers(myHeaders),
+        });
+
+        const response = await fetch(request);
+
+        if (!response.ok) {
+            alert("The server could not process the request.");
+        }
+        else {
+            alert("Success, message sent!");
+        }
+    }
+
     //Return the contect provider
 
     return (

@@ -13,7 +13,7 @@ https://github.com/azemoh/vscode-one-monokai/blob/master/colors.scss
 View Published Website: https://shaankhan.me
 
 ## TODOs
-#### ------------ Short Term ------------
+### Short Term 
 TODO: Create a different view for mobile/table devices   
 **_DONE_**: Create the Title Banner  
 **_DONE_**: Replace LOGOs for index.html  
@@ -21,17 +21,18 @@ TODO: Add a bar that indidicates how far in the page you scrolled like in: https
 TODO: Home and about tab have extremely similar code, consider refactoring  
 TODO: Make layout.js less verbose   
 TODO: Add more to the resume page (like link to resume in google drive)  
+TODO: Create Modal
 
-#### ------------ Medium Term ------------ 
+### Medium Term 
 **_DONE_**: Embed Resume  
 **_DONE_**: Add a page dedicated to Shadow   
 TODO: Update Resume  
 TODO: Add contact me page that uses AWS lambda functions for emailing  
 
-#### ------------ Long Term ------------ 
+### Long Term
 TODO: Convert to typescript (Create release for javascript variant)
 
 
-#### ------------ BUGS ------------
+### BUGS 
 **_DONE_**: Fix the size of the toolbar (the width changes between tabs)  
 TODO: Highlighting on pdf is wierd  
