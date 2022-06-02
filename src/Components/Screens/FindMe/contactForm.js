@@ -3,10 +3,18 @@ import { useMediaQuery } from 'react-responsive';
 import { useTheme } from '@mui/material/styles';
 import SmallTextField from '../../Misc/smallTextField';
 import SubmitButton from '../../Misc/submitButton';
+import { useState, useContext } from 'react';
+import { GlobalStoreContext } from '../../../Store';
 
 function ContactForm(props) {
-
+    const { store } = useContext(GlobalStoreContext);
     const theme = useTheme();
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
 
     const style = {
         position: 'relative',
@@ -21,21 +29,41 @@ function ContactForm(props) {
         p: 4
     };
 
-    const handleNameChange = function () {
-
+    const handleNameChange = function (event) {
+        setFormData(oldFormData => {
+            return {
+                ...oldFormData,
+                name: event.target.value
+            };
+        });
     }
 
-    const handleEmailChange = function () {
-
+    const handleEmailChange = function (event) {
+        setFormData(oldFormData => {
+            return {
+                ...oldFormData,
+                email: event.target.value
+            };
+        });
     }
 
-    const handleMessageChange = function () {
-
+    const handleMessageChange = function (event) {
+        setFormData(oldFormData => {
+            return {
+                ...oldFormData,
+                message: event.target.value
+            };
+        });
     }
 
     const onSubmit = function () {
-
+        store.submitContactForm(formData.name, formData.email, formData.message);
     }
+
+    const remainingCharacters = 500 - formData.message.trim().length;
+    const characterMessage = remainingCharacters >= 0 ?
+        `${remainingCharacters} character(s) remaining.` :
+        `Please remove ${remainingCharacters * -1} character(s).`
 
     return (
         <Grid container spacing={2} sx={style}>
@@ -70,7 +98,7 @@ function ContactForm(props) {
             <Grid item xs={12}>
                 <SmallTextField
                     fieldName={"Message"}
-                    helperText={"Please enter your message."}
+                    helperText={`Please enter your message. ${characterMessage}`}
                     isForm
                     onChange={handleMessageChange}
                     sx={{

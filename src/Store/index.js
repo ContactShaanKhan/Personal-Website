@@ -6,7 +6,9 @@ import { TabType, RouteType } from '../Common/Types'
 export const GlobalStoreContext = createContext({});
 
 const GlobalStoreActionType = {
-    SET_TAB: 0,
+    SET_TAB: "SET_TAB",
+    CHANGE_MODAL: "CHANGE_MODAL",
+    TOGGLE_LOADING: "TOGGLE_LOADING"
 }
 
 // Setting up the Global Store
@@ -29,22 +31,36 @@ function GlobalStoreContextProvider(props) {
     // The global store/state
     const [store, setStore] = useState({
         currTab: defaultTab,
+        modal: null,
+        loading: false,
     });
 
-    const storeReducer = (action) => {
-        const { type, payload } = action;
-        switch (type) {
-            // Change the name of the current 'Edit List'
-            case GlobalStoreActionType.SET_TAB: {
-                return setStore({
-                    currTab: payload,
-                });
+    const storeReducer = ({ type, payload }) => {
+        return setStore(oldStore => {
+            const newStore = {
+                ...oldStore
+            };
+
+            switch (type) {
+                // Change the name of the current 'Edit List'
+                case GlobalStoreActionType.SET_TAB:
+                    newStore.currTab = payload;
+                    break;
+
+                case GlobalStoreActionType.CHANGE_MODAL:
+                    newStore.modal = payload;
+                    break;
+
+                case GlobalStoreActionType.TOGGLE_LOADING:
+                    newStore.loading = !oldStore.loading;
+
+                default:
+                    break;
             }
 
-            default:
-                return store;
-        }
-    }
+            return newStore;
+        });
+    };
 
     // Auxilliary Information
 
@@ -105,19 +121,38 @@ function GlobalStoreContextProvider(props) {
     const server_NotSoSecret_secret = "IT-IS-NO-SECRET-THAT-SHADOW-IS-THE-CUTEST-DOG-ALIVE-!9976802140!";
 
     store.submitContactForm = async function (name, reply_to, body) {
-        console.log("Sending contact form...");
+        console.log("Sending contact form...", name, reply_to, body);
 
         name = name.trim();
         reply_to = reply_to.trim();
         body = body.trim();
 
-        // TODO: Modal
-        if (!name || !reply_to || !body)
-            return false;
+        if (!name || !reply_to || !body) {
+            store.createModal({
+                title: "Error in form",
+                body: "One of the fields is missing content.",
+            });
 
-        // TODO: Modal
-        if (!reply_to.includes('@'))
             return false;
+        }
+
+        if (!reply_to.includes('@')) {
+            store.createModal({
+                title: "Error with Email",
+                body: "Please provide a valid email address.",
+            });
+
+            return false;
+        }
+
+        if (body.length > 500) {
+            store.createModal({
+                title: "Error with Body Test",
+                body: "Please keep the number of characters to less than 500",
+            });
+
+            return false;
+        }
 
         const myHeaders = {
             shadowbestdog: server_NotSoSecret_secret
@@ -135,17 +170,62 @@ function GlobalStoreContextProvider(props) {
             headers: new Headers(myHeaders),
         });
 
-        const response = await fetch(request);
+        try {
+            const response = await fetch(request);
 
-        if (!response.ok) {
-            alert("The server could not process the request.");
+            if (response.ok) {
+                store.createModal({
+                    title: "Success!",
+                    body: `${name}, thank you for reaching out to me!  A confirmation email has been sent to your address.`,
+                });
+
+                return true;
+            }
         }
-        else {
-            alert("Success, message sent!");
+        catch (err) {
+            // console.error(err)
         }
+
+        store.createModal({
+            title: "Server Error",
+            body: "The server could not process the request, feel free to contact Shaan directly at contactshaankhan@gmail.com",
+        });
+
+        return false;
     }
 
-    //Return the contect provider
+    // Modal Related Functions
+
+    // Modal Related Functions ------------------------------------
+    store.createModal = function (metadata, callback = null) {
+        const { title, body, action } = metadata;
+
+        const modalInfo = {
+            title: title,
+            body: body,
+
+            // Supply action with a string if you want an option besides just `close`
+            action: action,
+            hook: callback,
+        };
+
+        storeReducer({
+            type: GlobalStoreActionType.CHANGE_MODAL,
+            payload: modalInfo
+        });
+    }
+
+    store.closeModal = function () {
+        if (!store.modal)
+            return;
+
+        storeReducer({
+            type: GlobalStoreActionType.CHANGE_MODAL,
+            payload: null
+        });
+    }
+
+    //Return the context provider
 
     return (
         <GlobalStoreContext.Provider
