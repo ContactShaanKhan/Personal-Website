@@ -155,11 +155,11 @@ function GlobalStoreContextProvider(props) {
 
         if (body.length > store.maxCharacters) {
             store.createModal({
-                title: "Error with Body Test",
+                title: "Error with Body Text",
                 body: `Please keep the number of characters to less than ${store.maxCharacters}`,
             }, function () {
                 if (hook)
-                    hook("Error with Body Test");
+                    hook("Error with Body Text");
             });
 
             return false;

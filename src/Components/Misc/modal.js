@@ -16,18 +16,6 @@ function GlobalModal() {
     const { store } = useContext(GlobalStoreContext);
     const theme = useTheme();
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 600,
-        bgcolor: "rgba(255, 255, 255, 0.9)",
-        border: '5px solid ' + theme.palette.lime.main,
-        borderRadius: "10px",
-        p: 4,
-    };
-
     if (!store.modal)
         return (<div></div>);
 
@@ -49,6 +37,20 @@ function GlobalModal() {
     const titleColor = (isError) ? theme.palette.pink.main :
         (isSuccess) ? theme.palette.lime.main :
             theme.palette.backgroundDark.main;
+
+    const borderColor = (isError) ? theme.palette.pink.main : theme.palette.lime.main;
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 600,
+        bgcolor: "rgba(255, 255, 255, 0.9)",
+        border: '5px solid ' + borderColor,
+        borderRadius: "10px",
+        p: 4,
+    };
 
     return (
         <Modal

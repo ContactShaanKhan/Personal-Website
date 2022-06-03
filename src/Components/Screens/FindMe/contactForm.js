@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Menu, MenuItem } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 import { useTheme } from '@mui/material/styles';
 import SmallTextField from '../../Misc/smallTextField';
@@ -6,6 +6,9 @@ import SubmitButton from '../../Misc/submitButton';
 import { useState, useContext } from 'react';
 import { GlobalStoreContext } from '../../../Store';
 import LoadingIcon from '../../Misc/loadingIcon';
+import InfoIcon from '@mui/icons-material/Info';
+
+const contactFormLink = "https://github.com/ContactShaanKhan/Contact-Me-Form";
 
 function ContactForm(props) {
     const { store } = useContext(GlobalStoreContext);
@@ -70,6 +73,8 @@ function ContactForm(props) {
         });
     }
 
+    const [anchorEl, setAnchorEl] = useState(null);
+
     const remainingCharacters = store.maxCharacters - formData.message.trim().length;
     const characterMessage = remainingCharacters >= 0 ?
         `${remainingCharacters} character(s) remaining.` :
@@ -77,13 +82,42 @@ function ContactForm(props) {
 
     return (
         <Grid container spacing={2} sx={style}>
-            <Grid item xs={12} sx={{
-                textAlign: "center",
-                color: theme.palette.backgroundDark.main,
-            }}>
-                <Typography id="modal-title" variant="h4">
-                    Contact Form
-                </Typography>
+            <Grid item xs={12}>
+                <div>
+                    <InfoIcon
+                        aria-controls="menu-contact-form"
+                        aria-haspopup="true"
+                        sx={{
+                            cursor: "pointer"
+                        }}
+                        onClick={(event) => { setAnchorEl(event.currentTarget); }}
+                    />
+                    <Menu
+                        id="menu-contact-form"
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'left',
+                        }}
+                        open={Boolean(anchorEl)}
+                        onClose={() => { setAnchorEl(null); }}
+                    >
+                        <MenuItem onClick={() => { window.open(contactFormLink) }}>Click to learn how this contact form works</MenuItem>
+                    </Menu>
+                </div>
+                <div style={{
+                    color: theme.palette.backgroundDark.main,
+                    textAlign: "center",
+                }}>
+                    <Typography id="modal-title" variant="h4">
+                        Contact Form
+                    </Typography>
+                </div>
             </Grid>
             <Grid item xs={12}>
                 <SmallTextField
