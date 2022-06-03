@@ -72,6 +72,11 @@ function ContactForm(props) {
         });
     }
 
+    const onMoreInfo = function () {
+        window.open(contactFormLink);
+        setAnchorEl(null);
+    }
+
     const [anchorEl, setAnchorEl] = useState(null);
 
     const remainingCharacters = store.maxCharacters - formData.message.trim().length;
@@ -106,7 +111,7 @@ function ContactForm(props) {
                         open={Boolean(anchorEl)}
                         onClose={() => { setAnchorEl(null); }}
                     >
-                        <MenuItem onClick={() => { window.open(contactFormLink) }}>
+                        <MenuItem onClick={onMoreInfo}>
                             Click to learn how this contact form works.
                         </MenuItem>
                     </Menu>
