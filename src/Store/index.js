@@ -212,6 +212,10 @@ function GlobalStoreContextProvider(props) {
         }, function () {
             if (hook)
                 hook("Server Error");
+
+            storeReducer({
+                type: GlobalStoreActionType.TOGGLE_LOADING
+            });
         });
 
         return false;
