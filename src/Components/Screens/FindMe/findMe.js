@@ -12,12 +12,19 @@ function FindMe() {
     const { store } = useContext(GlobalStoreContext);
 
     const isDesktopOrLaptop = useMediaQuery({ query: store.makeMediaQuery(1575) });
+    const shouldStack = !useMediaQuery({ query: store.makeMediaQuery(1350) });
 
-    const cols = (isDesktopOrLaptop) ? 4 : 6;
-    const iconsWidth = (isDesktopOrLaptop) ? 6 : 5;
+    let cols = (isDesktopOrLaptop) ? 4 : 6;
+    let iconsWidth = (isDesktopOrLaptop) ? 6 : 5;
+
+    if (shouldStack) {
+        iconsWidth = 12;
+        cols = 3;
+    }
+
 
     return (
-        <Grid container>
+        <Grid container spacing={(shouldStack) ? 8 : 0}>
             <Grid item xs={iconsWidth}>
                 <Grid container spacing={3}>
                     {
@@ -29,11 +36,13 @@ function FindMe() {
                     }
                 </Grid>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={(12 - iconsWidth > 0) ? 12 - iconsWidth : 12} sx={{
+                // marginTop: "40px"
+            }}>
                 <ContactForm />
                 {store.loading ? <ContactFormOverlay /> : ""}
             </Grid>
-        </Grid>
+        </Grid >
     );
 }
 

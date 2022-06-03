@@ -5,7 +5,6 @@ import SmallTextField from '../../Misc/smallTextField';
 import SubmitButton from '../../Misc/submitButton';
 import { useState, useContext } from 'react';
 import { GlobalStoreContext } from '../../../Store';
-import LoadingIcon from '../../Misc/loadingIcon';
 import InfoIcon from '@mui/icons-material/Info';
 
 const contactFormLink = "https://github.com/ContactShaanKhan/Contact-Me-Form";
@@ -22,7 +21,7 @@ function ContactForm(props) {
 
     const style = {
         position: 'relative',
-        marginLeft: "10%",
+        marginLeft: "calc(50% - 300px)",
         bgcolor: 'white',
         border: '5px solid ' + theme.palette.lime.main,
         borderRadius: "10px",
@@ -107,7 +106,9 @@ function ContactForm(props) {
                         open={Boolean(anchorEl)}
                         onClose={() => { setAnchorEl(null); }}
                     >
-                        <MenuItem onClick={() => { window.open(contactFormLink) }}>Click to learn how this contact form works</MenuItem>
+                        <MenuItem onClick={() => { window.open(contactFormLink) }}>
+                            Click to learn how this contact form works.
+                        </MenuItem>
                     </Menu>
                 </div>
                 <div style={{
