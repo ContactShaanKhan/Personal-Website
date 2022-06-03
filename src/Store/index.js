@@ -53,6 +53,7 @@ function GlobalStoreContextProvider(props) {
 
                 case GlobalStoreActionType.TOGGLE_LOADING:
                     newStore.loading = !oldStore.loading;
+                    break;
 
                 default:
                     break;
@@ -107,20 +108,21 @@ function GlobalStoreContextProvider(props) {
 
 
     // Store Functions and constants related to screen size
-    store.desktopMinWidthQuery = '(min-width: 993px)';
+    store.desktopMinWidth = 993;
     store.makeMediaQuery = function (minWidth) {
-        return '(min-width: ' + minWidth + 'px)';
+        return `(min-width: ${minWidth ?? store.desktopMinWidth}px)`;
     }
+    store.desktopMinWidthQuery = store.makeMediaQuery(store.desktopMinWidth);
 
 
     // API Calls and server related information
 
     // Server constants ------------------------------------
-    const maxCharacters = 500;
+    store.maxCharacters = 500;
     const endPoint = "https://88wgvu7tt2.execute-api.us-east-1.amazonaws.com/default/ContactMe";
     const server_NotSoSecret_secret = "IT-IS-NO-SECRET-THAT-SHADOW-IS-THE-CUTEST-DOG-ALIVE-!9976802140!";
 
-    store.submitContactForm = async function (name, reply_to, body) {
+    store.submitContactForm = async function (name, reply_to, body, hook) {
         console.log("Sending contact form...", name, reply_to, body);
 
         name = name.trim();
@@ -131,6 +133,9 @@ function GlobalStoreContextProvider(props) {
             store.createModal({
                 title: "Error in form",
                 body: "One of the fields is missing content.",
+            }, function () {
+                if (hook)
+                    hook("Error in form");
             });
 
             return false;
@@ -140,15 +145,21 @@ function GlobalStoreContextProvider(props) {
             store.createModal({
                 title: "Error with Email",
                 body: "Please provide a valid email address.",
+            }, function () {
+                if (hook)
+                    hook("Error with Email");
             });
 
             return false;
         }
 
-        if (body.length > 500) {
+        if (body.length > store.maxCharacters) {
             store.createModal({
                 title: "Error with Body Test",
-                body: "Please keep the number of characters to less than 500",
+                body: `Please keep the number of characters to less than ${store.maxCharacters}`,
+            }, function () {
+                if (hook)
+                    hook("Error with Body Test");
             });
 
             return false;
@@ -171,24 +182,36 @@ function GlobalStoreContextProvider(props) {
         });
 
         try {
+            storeReducer({
+                type: GlobalStoreActionType.TOGGLE_LOADING
+            });
+
             const response = await fetch(request);
 
             if (response.ok) {
                 store.createModal({
                     title: "Success!",
                     body: `${name}, thank you for reaching out to me!  A confirmation email has been sent to your address.`,
+                }, function () {
+                    if (hook)
+                        hook();
+
+                    storeReducer({
+                        type: GlobalStoreActionType.TOGGLE_LOADING
+                    });
                 });
 
                 return true;
             }
         }
-        catch (err) {
-            // console.error(err)
-        }
+        catch (err) { /* Pass down error */ }
 
         store.createModal({
             title: "Server Error",
             body: "The server could not process the request, feel free to contact Shaan directly at contactshaankhan@gmail.com",
+        }, function () {
+            if (hook)
+                hook("Server Error");
         });
 
         return false;
@@ -197,7 +220,7 @@ function GlobalStoreContextProvider(props) {
     // Modal Related Functions
 
     // Modal Related Functions ------------------------------------
-    store.createModal = function (metadata, callback = null) {
+    store.createModal = function (metadata, closeCallback = null, callback = null) {
         const { title, body, action } = metadata;
 
         const modalInfo = {
@@ -207,6 +230,7 @@ function GlobalStoreContextProvider(props) {
             // Supply action with a string if you want an option besides just `close`
             action: action,
             hook: callback,
+            closeHook: closeCallback
         };
 
         storeReducer({

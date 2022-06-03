@@ -14,12 +14,12 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function SubmitButton(props) {
-    const { text, onClick, sx } = props;
+    const { text, onClick, sx, disabled } = props;
 
     return (
-        <ColorButton variant="contained" onClick={onClick} sx={sx}>
+        <ColorButton variant="contained" onClick={onClick} disabled={Boolean(disabled)} sx={sx}>
             <Typography>
-                {text}
+                {text ?? "SUBMIT"}
             </Typography>
         </ColorButton>
     );

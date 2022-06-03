@@ -18,9 +18,6 @@ const CssTextField = styled(TextField)({
         '&:hover fieldset': {
             borderColor: Colors.cyan,
         },
-        '&:hover': {
-            backgroundColor: 'white',
-        },
         '&.Mui-focused fieldset': {
             borderColor: Colors.caret,
         },
@@ -29,19 +26,20 @@ const CssTextField = styled(TextField)({
 
 export default function smallTextField(props) {
 
-    const { fieldName, helperText, onChange, sx, defaultValue, type, isForm } = props;
+    const { fieldName, helperText, onChange, sx, value, type, isForm, disabled } = props;
 
     return (
         <CssTextField
+            disabled={Boolean(disabled)}
             label={fieldName}
             helperText={helperText}
             onChange={onChange}
-            defaultValue={defaultValue}
+            value={value ?? ""}
             sx={sx}
-            type={type!=null?type:"text"}
+            type={type != null ? type : "text"}
             multiline={Boolean(isForm)}
-            minRows={(isForm)? 8 : 1}
-            maxRows={(isForm)? 8 : 1}
+            minRows={(isForm) ? 8 : 1}
+            maxRows={(isForm) ? 8 : 1}
         ></CssTextField>
     );
 }

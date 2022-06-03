@@ -4,15 +4,21 @@ import { Grid } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 import data from '../../../Data/FindMe.json';
 import ContactForm from './contactForm';
+import ContactFormOverlay from './contactFormOverlay';
+import { GlobalStoreContext } from '../../../Store';
+import { useContext } from 'react';
 
 function FindMe() {
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+    const { store } = useContext(GlobalStoreContext);
+
+    const isDesktopOrLaptop = useMediaQuery({ query: store.makeMediaQuery(1575) });
 
     const cols = (isDesktopOrLaptop) ? 4 : 6;
+    const iconsWidth = (isDesktopOrLaptop) ? 6 : 5;
 
     return (
         <Grid container>
-            <Grid item xs={6}>
+            <Grid item xs={iconsWidth}>
                 <Grid container spacing={3}>
                     {
                         data.body.map((item, index) => (
@@ -25,6 +31,7 @@ function FindMe() {
             </Grid>
             <Grid item xs={6}>
                 <ContactForm />
+                {store.loading ? <ContactFormOverlay /> : ""}
             </Grid>
         </Grid>
     );

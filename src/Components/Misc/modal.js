@@ -32,6 +32,8 @@ function GlobalModal() {
         return (<div></div>);
 
     const onClose = function () {
+        if (store.modal.closeHook)
+            store.modal.closeHook();
         store.closeModal(false);
     }
 

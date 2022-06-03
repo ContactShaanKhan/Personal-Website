@@ -5,6 +5,7 @@ import SmallTextField from '../../Misc/smallTextField';
 import SubmitButton from '../../Misc/submitButton';
 import { useState, useContext } from 'react';
 import { GlobalStoreContext } from '../../../Store';
+import LoadingIcon from '../../Misc/loadingIcon';
 
 function ContactForm(props) {
     const { store } = useContext(GlobalStoreContext);
@@ -18,15 +19,14 @@ function ContactForm(props) {
 
     const style = {
         position: 'relative',
-        top: '55%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 600,
+        marginLeft: "10%",
         bgcolor: 'white',
         border: '5px solid ' + theme.palette.lime.main,
         borderRadius: "10px",
-        boxShadow: 24,
-        p: 4
+        boxShadow: 25,
+        width: 600,
+        height: 650,
+        p: 4,
     };
 
     const handleNameChange = function (event) {
@@ -57,19 +57,29 @@ function ContactForm(props) {
     }
 
     const onSubmit = function () {
-        store.submitContactForm(formData.name, formData.email, formData.message);
+        store.submitContactForm(formData.name, formData.email, formData.message, (error) => {
+            if (error) {
+                return;
+            }
+
+            setFormData(() => ({
+                name: "",
+                email: "",
+                message: "Thank you for reaching out to me!"
+            }));
+        });
     }
 
-    const remainingCharacters = 500 - formData.message.trim().length;
+    const remainingCharacters = store.maxCharacters - formData.message.trim().length;
     const characterMessage = remainingCharacters >= 0 ?
         `${remainingCharacters} character(s) remaining.` :
-        `Please remove ${remainingCharacters * -1} character(s).`
+        `Please remove ${remainingCharacters * -1} character(s).`;
 
     return (
         <Grid container spacing={2} sx={style}>
             <Grid item xs={12} sx={{
                 textAlign: "center",
-                color: "black"
+                color: theme.palette.backgroundDark.main,
             }}>
                 <Typography id="modal-title" variant="h4">
                     Contact Form
@@ -77,7 +87,9 @@ function ContactForm(props) {
             </Grid>
             <Grid item xs={12}>
                 <SmallTextField
-                    fieldName={"Full Name"}
+                    value={formData.name}
+                    disabled={Boolean(store.loading)}
+                    fieldName={(store.loading) ? "" : "Full Name"}
                     helperText={"Please enter your full name."}
                     onChange={handleNameChange}
                     sx={{
@@ -87,7 +99,9 @@ function ContactForm(props) {
             </Grid>
             <Grid item xs={12}>
                 <SmallTextField
-                    fieldName={"Email"}
+                    value={formData.email}
+                    disabled={Boolean(store.loading)}
+                    fieldName={(store.loading) ? "" : "Email"}
                     helperText={"Please enter your email, you will receive a copy of the message sent."}
                     onChange={handleEmailChange}
                     sx={{
@@ -97,7 +111,9 @@ function ContactForm(props) {
             </Grid>
             <Grid item xs={12}>
                 <SmallTextField
-                    fieldName={"Message"}
+                    value={formData.message}
+                    disabled={Boolean(store.loading)}
+                    fieldName={(store.loading) ? "" : "Message"}
                     helperText={`Please enter your message. ${characterMessage}`}
                     isForm
                     onChange={handleMessageChange}
@@ -110,11 +126,12 @@ function ContactForm(props) {
                 textAlign: "center"
             }}>
                 <SubmitButton
+                    disabled={Boolean(store.loading)}
                     onClick={onSubmit}
                     sx={{
                         width: "100%"
                     }}
-                    text={"SEND"}
+                    text={(store.loading) ? "SENDING..." : "SEND"}
                 />
             </Grid>
         </Grid>
