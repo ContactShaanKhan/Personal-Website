@@ -5,7 +5,7 @@
 Author: Shaan Khan
 
 The layout of the website takes inspiration from the google-site that I created:
-https://sites.google.com/view/shaan-khan/home
+https://www.old.shaankhan.me/
 
 View Published Website: https://shaankhan.me
 
