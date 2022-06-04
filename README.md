@@ -24,7 +24,6 @@ View Published Website: https://shaankhan.me
 - Add more to the resume page (like link to resume in google drive)  
 
 ### Medium Term 
-- Update Resume  
 
 ### Long Term
 - Convert to typescript (Create release for javascript variant)
