@@ -1,9 +1,10 @@
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { Typography, Grid, Box } from '@mui/material'
-import { GlobalStoreContext } from '../../../Store'
+import { Typography, Grid, Box } from '@mui/material';
+import { GlobalStoreContext } from '../../../Store';
 import { Document, Page } from 'react-pdf';
-import ResumeData from '../../../Data/Resume.json'
+import ResumeData from '../../../Data/Resume.json';
+import SubmitButton from '../../Misc/submitButton';
 
 import 'react-pdf/dist/umd/Page/AnnotationLayer.css';
 import './resume.css'
@@ -27,15 +28,20 @@ function Resume() {
         scale = 2;
 
     return (
-        // <div className="Resume__container">
         <Box sx={{
             width: "100%",
             height: "100%",
         }}>
+            <SubmitButton
+                onClick={() => { window.open("https://shaankhan.me/Data/Resume/ShaanKhanResume.pdf") }}
+                sx={{
+                    width: "100%"
+                }}
+                text={"Open PDF"}
+            />
             <Document
                 file={ResumeData.ResumeLink}
                 options={options}
-                onClick={() => { window.open("https://shaankhan.me/Data/Resume/ShaanKhanResume.pdf") }}
             >
                 <Page pageNumber={1} scale={scale} />
             </Document>
