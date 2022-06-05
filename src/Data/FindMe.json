@@ -1,0 +1,25 @@
+{
+    "banner": "/Data/Banners/planesBanner.jpg",
+    "body": [
+        {
+            "name": "Linked In",
+            "link": "https://www.linkedin.com/in/shaan-khan-823a771b8/",
+            "image": "/Data/FindMe/linkedin.png"
+        },
+        {
+            "name": "GitHub",
+            "link": "https://github.com/ContactShaanKhan",
+            "image": "/Data/FindMe/github.png"
+        },
+        {
+            "name": "Twitter",
+            "link": "https://twitter.com/ctshaankhan",
+            "image": "/Data/FindMe/twitter.png"
+        },
+        {
+            "name": "Stack Overflow",
+            "link": "https://stackoverflow.com/users/13132133/shaan-k",
+            "image": "/Data/FindMe/so.jpeg"
+        }
+    ]
+}

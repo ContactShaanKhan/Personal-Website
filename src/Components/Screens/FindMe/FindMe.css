@@ -1,0 +1,35 @@
+.logo-card {
+    width          : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.logo-card-image {
+    width : 55%;
+    height: 55%;
+}
+
+.logo-card-button {
+    background-color: var(--swatch-caret);
+    color           : white;
+    height          : 30px;
+    width           : 150px;
+    padding         : 5%;
+    border-radius   : 10px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.logo-card-button:hover {
+    transition      : 250ms linear;
+    color           : white;
+    background-color: var(--swatch-cyan);
+    cursor          : pointer;
+}
+
+.logo-card-rotate {
+    transition: all 1s;
+    transform : rotateY(360deg);
+}

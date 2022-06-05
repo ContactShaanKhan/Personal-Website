@@ -1,0 +1,20 @@
+.react-pdf__Document {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    overflow-y    : visible;
+}
+
+.react-pdf__Page {
+    max-width : calc(100% - 2em);
+    margin    : 1em;
+}
+
+.react-pdf__Page canvas {
+    margin: 0 auto;
+}
+
+.react-pdf__message {
+    padding: 20px;
+    color  : white;
+}

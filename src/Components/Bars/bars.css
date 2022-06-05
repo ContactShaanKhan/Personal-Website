@@ -1,0 +1,54 @@
+/* Css for the banner */
+#page-banner {
+    width   : 100%;
+    height  : 100%;
+    position: relative;
+}
+
+#page-banner-image {
+    position  : relative;
+    width     : 100%;
+    height    : 25vh;
+    object-fit: cover;
+    float     : inline-start;
+}
+
+#page-banner-text {
+    display        : flex;
+    height         : 100%;
+    flex-direction : column;
+    align-items    : center;
+    overflow-y     : visible;
+    justify-content: center;
+    font-weight    : 900;
+}
+
+/* More page specific banner text css */
+
+.pbt-home {
+    color: #274e13;
+    background: rgba(256, 256, 256, 0.2);
+}
+
+.pbt-about-me {
+    color: white;
+}
+
+.pbt-find-me {
+    color: var(--swatch-blue);
+
+}
+
+.pbt-resume {
+    color: white;
+}
+
+.pbt-find-me {
+    color     : white;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.pbt-shadow {
+    color     : #070b0e;
+    background: rgba(256, 256, 256, 0.15);
+}
