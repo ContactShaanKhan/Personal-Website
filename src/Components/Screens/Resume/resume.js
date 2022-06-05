@@ -35,6 +35,7 @@ function Resume() {
             <Document
                 file={ResumeData.ResumeLink}
                 options={options}
+                onClick={() => { window.open("https://shaankhan.me/Data/Resume/ShaanKhanResume.pdf") }}
             >
                 <Page pageNumber={1} scale={scale} />
             </Document>
