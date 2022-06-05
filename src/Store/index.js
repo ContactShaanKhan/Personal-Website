@@ -86,6 +86,10 @@ function GlobalStoreContextProvider(props) {
                 history.push(RouteType.RESUME);
                 break;
 
+            case TabType.INTERESTS:
+                history.push(RouteType.INTERESTS);
+                break;
+
             case TabType.FINDME:
                 history.push(RouteType.FINDME);
                 break;

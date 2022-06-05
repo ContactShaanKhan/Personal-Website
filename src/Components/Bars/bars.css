@@ -52,3 +52,8 @@
     color     : #070b0e;
     background: rgba(256, 256, 256, 0.15);
 }
+
+.pbt-interests {
+    color     : white;
+    background: rgba(0, 0, 0, 0.375);
+}

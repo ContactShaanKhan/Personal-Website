@@ -33,7 +33,7 @@ function Resume() {
             height: "100%",
         }}>
             <SubmitButton
-                onClick={() => { window.open("https://shaankhan.me/Data/Resume/ShaanKhanResume.pdf") }}
+                onClick={() => { window.open(`https://shaankhan.me${ResumeData.ResumeLink}`) }}
                 sx={{
                     width: "100%"
                 }}

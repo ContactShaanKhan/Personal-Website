@@ -13,6 +13,7 @@ import {
     Resume,
     FindMe,
     Shadow,
+    Interests
 } from '../index';
 import './screens.css';
 
@@ -60,6 +61,7 @@ function Layout() {
                     <Route path={RouteType.RESUME} exact component={Resume} />
                     <Route path={RouteType.FINDME} exact component={FindMe} />
                     <Route path={RouteType.SHADOW} exact component={Shadow} />
+                    <Route path={RouteType.INTERESTS} exact component={Interests} />
                 </Switch>
             </div>
         </div >
@@ -86,6 +88,7 @@ function Layout() {
                         <Route path={RouteType.RESUME} exact component={Resume} />
                         <Route path={RouteType.FINDME} exact component={FindMe} />
                         <Route path={RouteType.SHADOW} exact component={Shadow} />
+                        <Route path={RouteType.INTERESTS} exact component={Interests} />
                     </Switch>
                 </div>
             </div>

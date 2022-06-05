@@ -11,6 +11,7 @@ import Resume from './Screens/Resume/resume'
 import FindMe from './Screens/FindMe/findMe'
 import Shadow from './Screens/Shadow/shadow'
 import LogoCard from './Screens/FindMe/logoCard'
+import Interests from './Screens/Interests/interests'
 
 // Exports
 export {
@@ -23,4 +24,5 @@ export {
     FindMe,
     Shadow,
     LogoCard,
+    Interests
 }

@@ -7,7 +7,8 @@ import dataHome from '../../Data/Home.json';
 import dataFindMe from '../../Data/FindMe.json';
 import dataAboutMe from '../../Data/AboutMe.json';
 import dataResume from '../../Data/Resume.json';
-import dataShadow from '../../Data/Shadow.json'
+import dataShadow from '../../Data/Shadow.json';
+import dataInterests from '../../Data/Interests.json';
 
 import './bars.css'
 import { Box, Typography } from '@mui/material';
@@ -49,6 +50,11 @@ function Banner() {
         case TabType.SHADOW:
             bannerImage = dataShadow.banner;
             bannerClass = "pbt-shadow"
+            break;
+
+        case TabType.INTERESTS:
+            bannerImage = dataInterests.banner;
+            bannerClass = "pbt-interests"
             break;
     }
 
