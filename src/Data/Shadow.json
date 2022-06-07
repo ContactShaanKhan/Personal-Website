@@ -1,97 +1,119 @@
 {
-  "banner": "/Data/Banners/tramvajBanner.jpeg",
-  "images": [
-    {
-      "img": "/Data/Shadow/shadow1.JPG",
-      "title": "Shadow 1"
-    },
-    {
-      "img": "/Data/Shadow/shadow2.JPG",
-      "title": "Shadow 2"
-    },
-    {
-      "img": "/Data/Shadow/shadow3.jpg",
-      "title": "Shadow 3"
-    },
-    {
-      "img": "/Data/Shadow/shadow4.JPG",
-      "title": "Shadow 4"
-    },
-    {
-      "img": "/Data/Shadow/shadow5.jpg",
-      "title": "Shadow 5"
-    },
-    {
-      "img": "/Data/Shadow/shadow6.JPG",
-      "title": "Shadow 6"
-    },
-    {
-      "img": "/Data/Shadow/shadow7.jpg",
-      "title": "Shadow 7"
-    },
-    {
-      "img": "/Data/Shadow/shadow8.jpg",
-      "title": "Shadow 8"
-    },
-    {
-      "img": "/Data/Shadow/shadow9.jpg",
-      "title": "Shadow 9"
-    },
-    {
-      "img": "/Data/Shadow/shadow10.jpg",
-      "title": "Shadow 10"
-    },
-    {
-      "img": "/Data/Shadow/shadow11.jpg",
-      "title": "Shadow 11"
-    },
-    {
-      "img": "/Data/Shadow/shadow12.jpg",
-      "title": "Shadow 12"
-    },
-    {
-      "img": "/Data/Shadow/shadow13.JPG",
-      "title": "Shadow 13"
-    },
-    {
-      "img": "/Data/Shadow/shadow14.JPG",
-      "title": "Shadow 14"
-    },
-    {
-      "img": "/Data/Shadow/shadow15.jpg",
-      "title": "Shadow 15"
-    },
-    {
-      "img": "/Data/Shadow/shadow16.jpg",
-      "title": "Shadow 16"
-    },
-    {
-      "img": "/Data/Shadow/shadow17.JPG",
-      "title": "Shadow 17"
-    },
-    {
-      "img": "/Data/Shadow/shadow18.jpg",
-      "title": "Shadow 18"
-    },
-    {
-      "img": "/Data/Shadow/shadow19.jpg",
-      "title": "Shadow 19"
-    },
-    {
-      "img": "/Data/Shadow/shadow20.jpg",
-      "title": "Shadow 20"
-    },
-    {
-      "img": "/Data/Shadow/shadow21.JPG",
-      "title": "Shadow 21"
-    },
-    {
-      "img": "/Data/Shadow/shadow22.JPG",
-      "title": "Shadow 22"
-    },
-    {
-      "img": "/Data/Shadow/shadow23.JPG",
-      "title": "Shadow 23"
-    }
-  ]
+    "banner": "/Data/Banners/tramvajBanner.jpeg",
+    "images": [
+        {
+            "img": "/Data/Shadow/shadow1.JPG",
+            "title": "Shadow 1"
+        },
+        {
+            "img": "/Data/Shadow/shadow2.JPG",
+            "title": "Shadow 2"
+        },
+        {
+            "img": "/Data/Shadow/shadow3.jpg",
+            "title": "Shadow 3"
+        },
+        {
+            "img": "/Data/Shadow/shadow4.JPG",
+            "title": "Shadow 4"
+        },
+        {
+            "img": "/Data/Shadow/shadow5.jpg",
+            "title": "Shadow 5"
+        },
+        {
+            "img": "/Data/Shadow/shadow6.JPG",
+            "title": "Shadow 6"
+        },
+        {
+            "img": "/Data/Shadow/shadow7.jpg",
+            "title": "Shadow 7"
+        },
+        {
+            "img": "/Data/Shadow/shadow8.jpg",
+            "title": "Shadow 8"
+        },
+        {
+            "img": "/Data/Shadow/shadow9.jpg",
+            "title": "Shadow 9"
+        },
+        {
+            "img": "/Data/Shadow/shadow10.jpg",
+            "title": "Shadow 10"
+        },
+        {
+            "img": "/Data/Shadow/shadow11.jpg",
+            "title": "Shadow 11"
+        },
+        {
+            "img": "/Data/Shadow/shadow12.jpg",
+            "title": "Shadow 12"
+        },
+        {
+            "img": "/Data/Shadow/shadow13.JPG",
+            "title": "Shadow 13"
+        },
+        {
+            "img": "/Data/Shadow/shadow14.JPG",
+            "title": "Shadow 14"
+        },
+        {
+            "img": "/Data/Shadow/shadow15.jpg",
+            "title": "Shadow 15"
+        },
+        {
+            "img": "/Data/Shadow/shadow16.jpg",
+            "title": "Shadow 16"
+        },
+        {
+            "img": "/Data/Shadow/shadow17.JPG",
+            "title": "Shadow 17"
+        },
+        {
+            "img": "/Data/Shadow/shadow18.jpg",
+            "title": "Shadow 18"
+        },
+        {
+            "img": "/Data/Shadow/shadow19.jpg",
+            "title": "Shadow 19"
+        },
+        {
+            "img": "/Data/Shadow/shadow20.jpg",
+            "title": "Shadow 20"
+        },
+        {
+            "img": "/Data/Shadow/shadow21.JPG",
+            "title": "Shadow 21"
+        },
+        {
+            "img": "/Data/Shadow/shadow22.JPG",
+            "title": "Shadow 22"
+        },
+        {
+            "img": "/Data/Shadow/shadow23.JPG",
+            "title": "Shadow 23"
+        }
+    ],
+    "otherImages": [
+        {
+            "img": "/Data/Shadow/TJ1.JPG",
+            "title": "TJ 1"
+        },
+        {
+            "img": "/Data/Shadow/TJ2.JPG",
+            "title": "TJ 2"
+        },
+        {
+            "img": "/Data/Shadow/TJ3.JPG",
+            "title": "TJ 3"
+        },
+        {
+            "img": "/Data/Shadow/TJ4.JPG",
+            "title": "TJ 4"
+        },
+        {
+            "img": "/Data/Shadow/TJ5.JPG",
+            "title": "TJ 5"
+        }
+    ]
 }
