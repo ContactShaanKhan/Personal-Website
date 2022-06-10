@@ -74,6 +74,20 @@
     z-index : 12;
 }
 
+.darkened-mobile-open {
+    position        : fixed;
+    height          : 100vh;
+    width           : 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index         : 9;
+}
+
+.darkened-mobile-close {
+    position: fixed;
+    height  : 0px;
+    width   : 0px;
+}
+
 .slide-in {
     animation        : slide-in 0.5s forwards;
     -webkit-animation: slide-in 0.5s forwards;

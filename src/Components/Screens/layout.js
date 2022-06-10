@@ -22,16 +22,10 @@ function Layout() {
 
     const isDesktopOrLaptop = useMediaQuery({ query: store.desktopMinWidthQuery });
 
-    const [slideState, setSlideState] = useState("");
+    const [slideState, setSlideState] = useState('');
 
     useEffect(function () {
-        setSlideState((prev) => {
-            if (prev === 'slide-in') {
-                return 'slide-out'
-            }
-
-            return '';
-        });
+        setSlideState((prev) => (prev === 'slide-in') ? 'slide-out' : '');
     }, [isDesktopOrLaptop]);
 
     const handleOpen = function () {
@@ -39,37 +33,28 @@ function Layout() {
     }
 
     const handleBodyClick = function () {
-        setSlideState((prev) => {
-            if (prev === 'slide-in') {
-                return 'slide-out'
-            }
-
-            return '';
-        });
+        setSlideState((prev) => (prev === 'slide-in') ? 'slide-out' : '');
     }
-
-    const CloseButton = (
-        <IconButton
-            edge="start"
-            aria-label="menu"
-            sx={{ mr: 2, color: "white" }}
-            onClick={handleBodyClick}
-        >
-            <CloseIcon />
-        </IconButton>
-    );
-
-    let slideBarMobile = `sidebar-mobile-open ${slideState}`;
-
 
     const mobileView = (
         <div id="layout-mobile">
-            <div className={slideBarMobile}>
+            <div className={`sidebar-mobile-open ${slideState}`}>
                 <div className='close-button' >
-                    {CloseButton}
+                    <IconButton
+                        edge="start"
+                        aria-label="menu"
+                        sx={{ mr: 2, color: "white" }}
+                        onClick={handleBodyClick}
+                    >
+                        <CloseIcon />
+                    </IconButton>
                 </div>
                 <TabBar BeforeHook={handleBodyClick} />
             </div>
+            <div
+                className={(slideState === 'slide-in') ? 'darkened-mobile-open' : 'darkened-mobile-closed'}
+                onClick={handleBodyClick}
+            />
             <div id='appbar'>
                 <AppBar position="static">
                     <Toolbar variant="dense">
