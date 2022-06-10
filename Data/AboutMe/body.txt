@@ -1,9 +1,0 @@
-I'm Shaan Khan, a Long Island based computer science student at Stony Brook University who just entered senior year of college. I love to program and am lucky enough to make a career out of it.
-
-Technology has always been a large part of my life but my interest in it amplified in middle school when I built my first computer. This sparked my passion for computer hardware which evolved into computer software when I took my first programming class in the 10th grade.
-
-Since then, I’ve been hooked. Today I enjoy making more complicated and more useful software and also enjoy repairing/refurbishing old computers on the side to breathe new life into old hardware.
-
-Last summer I worked at Société Générale as an intern for their application support team which acts as a midway between the trading platform programmers and the traders. Over the course of the summer I created a log scraping tool that continuously updates a dashboard on a critical business flow. This flow is a series of steps, including servers, that a particular DPS (Dynamic Portfolio Swap) trade must pass through and the bank did not have a solid way of monitoring it before the dashboard.
-
-This July I will be returning to Société Générale as a full time analyst with plans to aid in the development and maintenance of their trading system. This is a particularly exciting role for me since I have always enjoyed studying economics and finance and this job provides me the intersection of finance and tech.
