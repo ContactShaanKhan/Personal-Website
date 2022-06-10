@@ -99,12 +99,20 @@
 }
 
 @keyframes slide-in {
+    0% {
+        transform: translateX(-200px)
+    }
+
     100% {
         transform: translateX(0px);
     }
 }
 
 @-webkit-keyframes slide-in {
+    0% {
+        -webkit-transform: translateX(-200px)
+    }
+
     100% {
         -webkit-transform: translateX(0px);
     }
