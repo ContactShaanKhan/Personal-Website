@@ -19,9 +19,9 @@ View Published Website: https://shaankhan.me
 ### Short Term 
 - Create a different view for mobile/table devices   
 - Add a bar that indidicates how far in the page you scrolled like in: https://www.lifewire.com/jsx-file-2621849  
-- Home and about tab have extremely similar code, consider refactoring  
 - Make layout.js less verbose   
 - Add more to the resume page (like link to resume in google drive)  
+- Maybe combine home and find me page
 
 ### Medium Term 
 

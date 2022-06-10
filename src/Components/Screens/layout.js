@@ -9,7 +9,6 @@ import {
     TabBar,
     Banner,
     Home,
-    AboutMe,
     Resume,
     FindMe,
     Shadow,
@@ -57,7 +56,6 @@ function Layout() {
             <div className={(checked) ? "closed-body-mobile" : "open-body-mobile"}>
                 <Switch>
                     <Route path={RouteType.HOME} exact component={Home} />
-                    <Route path={RouteType.ABOUTME} exact component={AboutMe} />
                     <Route path={RouteType.RESUME} exact component={Resume} />
                     <Route path={RouteType.FINDME} exact component={FindMe} />
                     <Route path={RouteType.SHADOW} exact component={Shadow} />
@@ -84,7 +82,6 @@ function Layout() {
                 <div id="main-body-container">
                     <Switch>
                         <Route path={RouteType.HOME} exact component={Home} />
-                        <Route path={RouteType.ABOUTME} exact component={AboutMe} />
                         <Route path={RouteType.RESUME} exact component={Resume} />
                         <Route path={RouteType.FINDME} exact component={FindMe} />
                         <Route path={RouteType.SHADOW} exact component={Shadow} />

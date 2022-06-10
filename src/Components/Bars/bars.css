@@ -30,10 +30,6 @@
     background: rgba(256, 256, 256, 0.2);
 }
 
-.pbt-about-me {
-    color: white;
-}
-
 .pbt-find-me {
     color: var(--swatch-blue);
 
@@ -55,5 +51,4 @@
 
 .pbt-interests {
     color     : white;
-    background: rgba(0, 0, 0, 0.375);
 }

@@ -1,10 +1,10 @@
 // Home Screen
 
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { Typography, Grid, Box } from '@mui/material'
+import { Typography, Grid, Box } from '@mui/material';
 import data from '../../../Data/Home.json';
-import { GlobalStoreContext } from '../../../Store'
+import { GlobalStoreContext } from '../../../Store';
 
 function Home() {
     const { store } = useContext(GlobalStoreContext);
@@ -19,7 +19,6 @@ function Home() {
         fetch(data.body)
             .then(r => r.text())
             .then(textString => {
-                ;
                 setBody(textString);
             });
     }, [ /* Component Did Mount */]);
@@ -51,16 +50,16 @@ function Home() {
                     overflow: "hidden",
                     margin: 0,
                     float: "left",
-                    width: (changeFormat) ? "300px" : "100%",
+                    width: (changeFormat) ? "425px" : "100%",
                     paddingRight: "50px",
                     paddingBottom: "20px",
-                    display:"flex",
+                    display: "flex",
                     justifyContent: "center",
 
                 }}>
                     <Box
                         sx={{
-                            width: "300px",
+                            width: "425px",
                         }}
                     >
                         <img

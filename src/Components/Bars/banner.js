@@ -5,7 +5,6 @@ import { GlobalStoreContext } from '../../Store';
 
 import dataHome from '../../Data/Home.json';
 import dataFindMe from '../../Data/FindMe.json';
-import dataAboutMe from '../../Data/AboutMe.json';
 import dataResume from '../../Data/Resume.json';
 import dataShadow from '../../Data/Shadow.json';
 import dataInterests from '../../Data/Interests.json';
@@ -29,12 +28,6 @@ function Banner() {
             bannerImage = dataHome.banner;
             bannerClass = "pbt-home";
             bannerText = "Hi! I'm Shaan Khan."
-            break;
-
-        case TabType.ABOUTME:
-            bannerImage = dataAboutMe.banner;
-            bannerClass = "pbt-about-me";
-            bannerText = "All about me"
             break;
 
         case TabType.RESUME:
