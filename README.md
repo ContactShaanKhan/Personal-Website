@@ -31,4 +31,3 @@ View Published Website: https://shaankhan.me
 ### BUGS 
 1. Highlighting on pdf is wierd  
 2. Overlay for contact form is off-centered
-3. Mobile Tabbar animation on DuckDuckGo Browser is wrong
