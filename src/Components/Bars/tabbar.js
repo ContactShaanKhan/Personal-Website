@@ -38,7 +38,8 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
 );
 
 // App bar component
-function Appbar() {
+// Some lifecycle hooks
+function Appbar({ BeforeHook, AfterHook }) {
     const { store } = useContext(GlobalStoreContext);
 
     // Stylized Title Text
@@ -57,7 +58,11 @@ function Appbar() {
 
         // Set Tab Globally - if there is a change
         if (newValue !== store.currTab) {
+            if (BeforeHook)
+                BeforeHook(newValue);
             store.setTab(newValue);
+            if (AfterHook)
+                AfterHook(newValue);
         }
     };
 

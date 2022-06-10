@@ -40,12 +40,78 @@
     float           : inline-end;
 }
 
-#layout-mobile {}
+#layout-mobile {
+    height  : 100%;
+    width   : 100%;
+    position: absolute;
+}
 
-.sidebar-mobile-open {}
+#mobile-banner {}
 
-.sidebar-mobile-closed {}
+.sidebar-mobile-open {
+    position         : fixed;
+    height           : 100vh;
+    width            : 200px;
+    float            : left;
+    z-index          : 10;
+    transform        : translateX(-200px);
+    -webkit-transform: translateX(-200px);
+}
 
-.closed-body-mobile {}
+.sidebar-mobile-closed {
+    position: fixed;
+    height  : 100vh;
+    width   : 200px;
+    float   : left;
+    z-index : 10;
+}
 
-.open-body-mobile {}
+.close-button {
+    position: fixed;
+    float   : left;
+    left    : 25px;
+    top     : 7px;
+    z-index : 12;
+}
+
+.slide-in {
+    animation        : slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+    animation        : slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        -webkit-transform: translateX(0px);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-200px);
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        -webkit-transform: translateX(0px);
+    }
+
+    100% {
+        -webkit-transform: translateX(-200px);
+    }
+}

@@ -1,9 +1,10 @@
 import { Route, Switch } from 'react-router-dom';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { GlobalStoreContext } from '../../Store'
 import { useMediaQuery } from 'react-responsive';
-import { AppBar, Toolbar, IconButton, Typography, Collapse } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { RouteType } from '../../Common/Types';
 import {
     TabBar,
@@ -21,15 +22,54 @@ function Layout() {
 
     const isDesktopOrLaptop = useMediaQuery({ query: store.desktopMinWidthQuery });
 
-    // When checked is true the sidebar is open
-    const [checked, setChecked] = useState(false);
+    const [slideState, setSlideState] = useState("");
 
-    const handleOpen = function (e) {
-        setChecked((prev) => !prev);
+    useEffect(function () {
+        setSlideState((prev) => {
+            if (prev === 'slide-in') {
+                return 'slide-out'
+            }
+
+            return '';
+        });
+    }, [isDesktopOrLaptop]);
+
+    const handleOpen = function () {
+        setSlideState(prev => (prev !== 'slide-in') ? 'slide-in' : prev);
     }
+
+    const handleBodyClick = function () {
+        setSlideState((prev) => {
+            if (prev === 'slide-in') {
+                return 'slide-out'
+            }
+
+            return '';
+        });
+    }
+
+    const CloseButton = (
+        <IconButton
+            edge="start"
+            aria-label="menu"
+            sx={{ mr: 2, color: "white" }}
+            onClick={handleBodyClick}
+        >
+            <CloseIcon />
+        </IconButton>
+    );
+
+    let slideBarMobile = `sidebar-mobile-open ${slideState}`;
+
 
     const mobileView = (
         <div id="layout-mobile">
+            <div className={slideBarMobile}>
+                <div className='close-button' >
+                    {CloseButton}
+                </div>
+                <TabBar BeforeHook={handleBodyClick} />
+            </div>
             <div id='appbar'>
                 <AppBar position="static">
                     <Toolbar variant="dense">
@@ -38,7 +78,7 @@ function Layout() {
                             color="inherit"
                             aria-label="menu"
                             sx={{ mr: 2 }}
-                            onClick={handleOpen}
+                            onClick={() => { handleOpen() }}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -48,12 +88,11 @@ function Layout() {
                     </Toolbar>
                 </AppBar>
             </div>
-            <div className={(checked) ? 'sidebar-mobile-open' : 'sidebar-mobile-closed'}>
-                <Collapse in={checked} orientation="horizontal">
-                    <TabBar />
-                </Collapse>
+            <div id="mobile-banner" onClick={handleBodyClick}>
+                <Banner />
+                <div id="page-banner-break" />
             </div>
-            <div className={(checked) ? "closed-body-mobile" : "open-body-mobile"}>
+            <div onClick={handleBodyClick}>
                 <Switch>
                     <Route path={RouteType.HOME} exact component={Home} />
                     <Route path={RouteType.RESUME} exact component={Resume} />
