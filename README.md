@@ -26,6 +26,7 @@ View Published Website: https://shaankhan.me
 
 ### Long Term
 - Convert to typescript (Create release for javascript variant)
+- Create copy of website in Czech.
 
 
 ### BUGS 
